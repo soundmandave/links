@@ -1,0 +1,241 @@
+:root {
+  --jungle-green: #00ff66;
+}
+
+/* Subtle Jungle Background */
+body {
+  margin: 0;
+  font-family: Tahoma, Verdana, sans-serif;
+  background:
+    radial-gradient(circle at 20% 30%, #0f1a12 0%, transparent 60%),
+    radial-gradient(circle at 80% 70%, #101810 0%, transparent 60%),
+    radial-gradient(circle at 50% 50%, #0a0f0a 0%, #050805 100%);
+}
+
+/* Wrapper */
+.terminal-wrapper {
+  display: flex;
+  justify-content: center;
+  padding: 30px 10px;
+}
+
+/* Main Panel */
+.mpc {
+  background: linear-gradient(to bottom, #1c1c1c, #121212);
+  border: 6px solid #000;
+  border-radius: 10px;
+  padding: 30px;
+  width: 100%;
+  max-width: 1100px;
+  box-shadow:
+    inset 0 3px 6px rgba(255,255,255,0.05),
+    inset 0 -10px 20px rgba(0,0,0,0.8),
+    0 20px 40px rgba(0,0,0,0.8);
+}
+
+/* Header */
+.terminal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(to bottom, #222, #111);
+  padding: 10px 15px;
+  border-radius: 6px;
+  margin-bottom: 20px;
+  border: 2px solid #000;
+}
+
+.terminal-title {
+  font-family: "Courier New", monospace;
+  color: var(--jungle-green);
+  font-size: 14px;
+  letter-spacing: 2px;
+  text-shadow: 0 0 6px var(--jungle-green);
+}
+
+.floppy-slot {
+  width: 60px;
+  height: 10px;
+  background: #000;
+  border-radius: 2px;
+}
+
+/* Display */
+.mpc-display {
+  position: relative;
+  background: #020502;
+  color: var(--jungle-green);
+  font-family: "Courier New", monospace;
+  border: 4px inset #000;
+  padding: 20px;
+  text-shadow: 0 0 8px var(--jungle-green);
+  overflow: hidden;
+}
+
+.mpc-display::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    to bottom,
+    rgba(0,255,102,0.03),
+    rgba(0,255,102,0.03) 1px,
+    transparent 1px,
+    transparent 3px
+  );
+}
+
+/* Layout */
+.controls-section {
+  display: flex;
+  gap: 25px;
+  margin-top: 20px;
+}
+
+/* Side Buttons */
+.side-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 150px;
+}
+
+.tab-button {
+  background: #111;
+  color: var(--jungle-green);
+  border: 2px solid #000;
+  padding: 12px;
+  font-size: 13px;
+  font-family: "Courier New", monospace;
+  cursor: pointer;
+}
+
+.tab-button.active {
+  box-shadow: inset 0 0 10px var(--jungle-green);
+}
+
+/* Pads */
+.pad-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+  flex: 1;
+}
+
+.pad {
+  aspect-ratio: 1 / 1;
+  background: linear-gradient(to bottom, #2a2a2a, #1a1a1a);
+  border: 3px solid #000;
+  border-radius: 6px;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+.pad {
+  position: relative;
+  overflow: hidden;
+}
+
+.pad.selected {
+  box-shadow: inset 0 0 15px var(--jungle-green);
+}
+
+.pad-label {
+  position: absolute;
+  bottom: 5px;
+  left: 5px;
+  right: 5px;
+   z-index: 2;
+  font-size: 11px;
+  color: var(--jungle-green);
+  text-align: center;
+  font-family: "Courier New", monospace;
+}
+
+/* Transport */
+.transport-container {
+  margin-top: 25px;
+  text-align: center;
+}
+
+.go-instruction {
+  color: var(--jungle-green);
+  font-family: "Courier New", monospace;
+  margin-bottom: 10px;
+}
+
+.led-row {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.led {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #300;
+}
+
+.led.active {
+  background: var(--jungle-green);
+  box-shadow: 0 0 10px var(--jungle-green);
+}
+
+.transport-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.transport-buttons button {
+  background: #111;
+  color: var(--jungle-green);
+  border: 2px solid #000;
+  padding: 15px 40px;
+  font-family: "Courier New", monospace;
+  cursor: pointer;
+}
+
+/* Utility */
+.utility-strip {
+  margin-top: 25px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.utility-btn {
+  background: #111;
+  color: var(--jungle-green);
+  border: 2px solid #000;
+  padding: 6px 12px;
+  font-size: 11px;
+  font-family: "Courier New", monospace;
+  text-decoration: none;
+}
+
+/* Mobile Sticky */
+@media (max-width: 768px) {
+
+  .display-section,
+  .transport-container {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background: #111;
+    padding: 10px 0;
+  }
+
+  .controls-section {
+    flex-direction: column;
+  }
+
+  .side-buttons {
+    flex-direction: row;
+    overflow-x: auto;
+    width: 100%;
+  }
+
+}

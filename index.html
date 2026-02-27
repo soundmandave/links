@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Studio Terminal</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="terminal-wrapper">
+
+  <div class="mpc">
+
+    <!-- Header -->
+    <div class="terminal-header">
+      <div class="terminal-title" id="terminalTitle">
+        STUDIO TERMINAL
+      </div>
+      <div class="floppy-slot"></div>
+    </div>
+
+    <div class="terminal-body">
+
+      <!-- Display -->
+      <div class="display-section">
+        <div class="mpc-display" id="mpcDisplay">
+          <h1>Loading...</h1>
+        </div>
+      </div>
+
+      <!-- Controls -->
+      <div class="controls-section">
+        <div class="side-buttons" id="tabBar"></div>
+        <div class="pad-grid" id="padGrid"></div>
+      </div>
+
+      <!-- Transport -->
+      <div class="transport-container">
+
+        <div class="go-instruction" id="goInstruction">
+          Press a Pad then hit <strong>GO</strong> to launch
+        </div>
+
+        <div class="led-row">
+          <div class="led" id="statusLed"></div>
+          <span class="led-label">ARMED</span>
+        </div>
+
+        <div class="transport-buttons">
+          <button id="cancelButton">CANCEL</button>
+          <button id="goButton" disabled>GO</button>
+        </div>
+
+      </div>
+
+      <!-- Utility Strip -->
+      <div class="utility-strip" id="utilityStrip"></div>
+
+    </div>
+
+  </div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
