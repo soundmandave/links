@@ -67,6 +67,7 @@ body {
 
 /* Display */
 .mpc-display {
+  position: relative;
   background: var(--display-bg);
   color: var(--primary-color);
   font-family: "Courier New", monospace;
