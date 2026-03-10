@@ -1,6 +1,15 @@
+/*
+==================================================
+STUDIO TERMINAL ENGINE (STABLE VERSION)
+JSON‑Driven
+==================================================
+*/
+
 let selectedLink = null;
 let selectedPadElement = null;
+let currentData = null; // store JSON globally
 
+// Core Elements
 const goButton = document.getElementById("goButton");
 const cancelButton = document.getElementById("cancelButton");
 const statusLed = document.getElementById("statusLed");
@@ -12,22 +21,53 @@ const utilityStrip = document.getElementById("utilityStrip");
 const display = document.getElementById("mpcDisplay");
 const terminalTitle = document.getElementById("terminalTitle");
 
+const displayMenuContainer = document.getElementById("displayMenu");
+
+// Display transport copies
+const goDisplayButtons = document.querySelectorAll(".go-display");
+const cancelDisplayButtons = document.querySelectorAll(".cancel-display");
+
+/*
+==================================================
+LOAD JSON
+==================================================
+*/
 fetch("pads.json")
   .then(res => res.json())
   .then(data => {
 
+    currentData = data;
+
+    terminalTitle.textContent =
+      data.headerTitle || "STUDIO TERMINAL";
+
+    display.innerHTML = `
+      <h1>${data.artistName}</h1>
+      <p>${data.tagline}</p>
+    `;
+
+    buildDisplayMenu(data);
+    buildUtilityButtons(data);
+    buildTabs(data);
+
+    if (data.categories.length > 0) {
+      buildPads(data.categories[0].pads, data.artistName);
+      applyTheme(data.categories[0]);
+    }
+
+  })
+  .catch(err => {
+    console.error("JSON Load Error:", err);
+  });
+
 /*
 ==================================================
-BUILD DISPLAY MENU FROM JSON
-Supports:
-- content mode (renders HTML)
-- bank mode (switches pad bank)
+DISPLAY MENU
 ==================================================
 */
+function buildDisplayMenu(data) {
 
-if (data.displayMenu) {
-
-  const displayMenu = document.getElementById("displayMenu");
+  if (!data.displayMenu) return;
 
   data.displayMenu.forEach(menuItem => {
 
@@ -36,142 +76,106 @@ if (data.displayMenu) {
 
     span.addEventListener("click", () => {
 
-      // CONTENT TYPE
+      // Render content if present
       if (menuItem.type === "content") {
-
         display.innerHTML = `
           <h1>${menuItem.title}</h1>
           ${menuItem.content}
         `;
-
       }
 
-      // BANK SWITCH TYPE
-    /*
-==================================================
-BANK SWITCH BY NAME (NOT INDEX)
-==================================================
-*/
-if (menuItem.type === "bank") {
+      // Switch bank if defined
+      if (menuItem.bankName) {
+        const bank = data.categories.find(
+          cat => cat.name === menuItem.bankName
+        );
 
-  const bank = data.categories.find(
-    category => category.name === menuItem.bankName
-  );
+        if (bank) {
+          buildPads(bank.pads, data.artistName);
+          applyTheme(bank);
+          setActiveTab(bank.name);
+        }
+      }
 
-  if (bank) {
+    });
 
-    buildPads(bank.pads, data.artistName);
+    displayMenuContainer.appendChild(span);
+
+  });
+
+}
 
 /*
 ==================================================
-APPLY BANK THEME
+UTILITY BUTTONS
 ==================================================
 */
+function buildUtilityButtons(data) {
 
-if (bank.theme) {
+  if (!data.utilityButtons) return;
 
-  const root = document.documentElement;
+  data.utilityButtons.forEach(btn => {
 
-  if (bank.theme.primary)
-    root.style.setProperty('--primary-color', bank.theme.primary);
+    const a = document.createElement("a");
+    a.classList.add("utility-btn");
+    a.textContent = btn.label;
+    a.href = btn.url;
+    a.target = "_blank";
 
-  if (bank.theme.accent)
-    root.style.setProperty('--accent-color', bank.theme.accent);
-
-  if (bank.theme.displayBg)
-    root.style.setProperty('--display-bg', bank.theme.displayBg);
-
-  if (bank.theme.backgroundImage) {
-    root.style.setProperty(
-      '--theme-image',
-      `url(images/${bank.theme.backgroundImage})`
-    );
-  }
-
+    utilityStrip.appendChild(a);
+  });
 }
 
+/*
+==================================================
+BANK TABS
+==================================================
+*/
+function buildTabs(data) {
 
-    // Update active side tab visually
-    document.querySelectorAll(".tab-button")
-      .forEach(t => t.classList.remove("active"));
+  data.categories.forEach((category, index) => {
 
-    const tabButtons = document.querySelectorAll(".tab-button");
+    const tab = document.createElement("button");
+    tab.classList.add("tab-button");
+    tab.textContent = category.name;
 
-    tabButtons.forEach(tab => {
-      if (tab.textContent === bank.name) {
-        tab.classList.add("active");
-      }
+    if (index === 0) tab.classList.add("active");
+
+    tab.addEventListener("click", () => {
+
+      setActiveTab(category.name);
+      buildPads(category.pads, data.artistName);
+      applyTheme(category);
+
+      display.innerHTML = `
+        <h1>${category.name}</h1>
+        <p>Pad bank loaded.</p>
+      `;
+
     });
 
-    display.innerHTML = `
-      <h1>${bank.name}</h1>
-      <p>Pad bank loaded.</p>
-    `;
-  }
-  
-  // If bankName exists, switch bank too
-if (menuItem.bankName) {
-
-  const bank = data.categories.find(
-    category => category.name === menuItem.bankName
-  );
-
-  if (bank) {
-    buildPads(bank.pads, data.artistName);
-  }
-}
-}
-
-    displayMenu.appendChild(span);
+    tabBar.appendChild(tab);
 
   });
 
-}	
+}
 
-    terminalTitle.textContent = data.headerTitle || "STUDIO TERMINAL";
-
-    display.innerHTML = `
-      <h1>${data.artistName}</h1>
-      <p>${data.tagline}</p>
-    `;
-
-    // Utility Buttons
-    if (data.utilityButtons) {
-      data.utilityButtons.forEach(btn => {
-        const a = document.createElement("a");
-        a.classList.add("utility-btn");
-        a.textContent = btn.label;
-        a.href = btn.url;
-        a.target = "_blank";
-        utilityStrip.appendChild(a);
-      });
-    }
-
-    // Build Banks / Categories
-    data.categories.forEach((category, index) => {
-
-      const tab = document.createElement("button");
-      tab.classList.add("tab-button");
-      tab.textContent = category.name;
-
-      if (index === 0) tab.classList.add("active");
-
-      tab.addEventListener("click", () => {
-        document.querySelectorAll(".tab-button")
-          .forEach(t => t.classList.remove("active"));
-        tab.classList.add("active");
-        buildPads(category.pads, data.artistName);
-      });
-
-      tabBar.appendChild(tab);
+function setActiveTab(name) {
+  document.querySelectorAll(".tab-button")
+    .forEach(t => {
+      t.classList.toggle("active", t.textContent === name);
     });
+}
 
-    buildPads(data.categories[0].pads, data.artistName);
-  });
-
+/*
+==================================================
+BUILD PADS
+==================================================
+*/
 function buildPads(pads, artistName) {
 
   padGrid.innerHTML = "";
+  resetSelection();
 
   const count = pads.length;
 
@@ -181,7 +185,6 @@ function buildPads(pads, artistName) {
   else displayCount = 16;
 
   const padded = [...pads];
-
   while (padded.length < displayCount) {
     padded.push({});
   }
@@ -191,30 +194,28 @@ function buildPads(pads, artistName) {
     const padElement = document.createElement("div");
     padElement.classList.add("pad");
 
-    // ✅ Thumbnail support
+    // Thumbnail
     if (pad.thumbnail) {
       const img = document.createElement("img");
       img.src = "images/" + pad.thumbnail;
+      img.style.position = "absolute";
       img.style.width = "100%";
       img.style.height = "100%";
       img.style.objectFit = "cover";
-      img.style.position = "absolute";
-      img.style.top = 0;
-      img.style.left = 0;
       padElement.appendChild(img);
     }
 
-    // ✅ Label
+    // Label
     const label = document.createElement("div");
     label.classList.add("pad-label");
-    label.textContent = pad.padLabel || `PAD ${index+1}`;
+    label.textContent =
+      pad.padLabel || `PAD ${index + 1}`;
     padElement.appendChild(label);
 
     padElement.addEventListener("click", () => {
 
-      if (selectedPadElement) {
+      if (selectedPadElement)
         selectedPadElement.classList.remove("selected");
-      }
 
       selectedPadElement = padElement;
       selectedPadElement.classList.add("selected");
@@ -222,12 +223,9 @@ function buildPads(pads, artistName) {
       selectedLink = pad.link || null;
 
       if (selectedLink) {
-        goButton.disabled = false;
-        statusLed.classList.add("active");
-        goInstruction.textContent = "Ready. Press GO to launch.";
+        enableGo();
       }
 
-      // ✅ Sound support
       if (pad.sound) {
         new Audio("sounds/" + pad.sound).play();
       }
@@ -236,51 +234,24 @@ function buildPads(pads, artistName) {
         <h1>${artistName}</h1>
         <p>${pad.displayTitle || ""}</p>
       `;
+
     });
 
     padGrid.appendChild(padElement);
+
   });
 
-  padGrid.style.gridTemplateRows = `repeat(${displayCount/4}, 1fr)`;
+  padGrid.style.gridTemplateRows =
+    `repeat(${displayCount / 4}, 1fr)`;
 }
 
-//Other//Additions
-
-goButton.addEventListener("click", () => {
 /*
 ==================================================
-DISPLAY TRANSPORT BUTTON HOOKS
-These reuse existing logic
+GO / CANCEL
 ==================================================
 */
 
-const goDisplayButtons = document.querySelectorAll(".go-display");
-const cancelDisplayButtons = document.querySelectorAll(".cancel-display");
-
-// Mirror GO state to display button
-function syncGoButtons() {
-  goDisplayButtons.forEach(btn => {
-    btn.disabled = goButton.disabled;
-  });
-}
-
-// When main GO changes state, sync display copy
-const observer = new MutationObserver(syncGoButtons);
-observer.observe(goButton, { attributes: true });
-
-// GO (display copy)
-goDisplayButtons.forEach(btn => {
-  btn.addEventListener("click", () => {
-    goButton.click(); // trigger original logic
-  });
-});
-
-// CANCEL (display copy)
-cancelDisplayButtons.forEach(btn => {
-  btn.addEventListener("click", () => {
-    cancelButton.click(); // trigger original reset logic
-  });
-});
+goButton.addEventListener("click", () => {
   if (selectedLink) {
     window.open(selectedLink, "_blank");
     resetSelection();
@@ -289,43 +260,76 @@ cancelDisplayButtons.forEach(btn => {
 
 cancelButton.addEventListener("click", resetSelection);
 
+// Display transport copies
+goDisplayButtons.forEach(btn => {
+  btn.addEventListener("click", () => {
+    goButton.click();
+  });
+});
+
+cancelDisplayButtons.forEach(btn => {
+  btn.addEventListener("click", () => {
+    cancelButton.click();
+  });
+});
+
+function enableGo() {
+  goButton.disabled = false;
+  statusLed.classList.add("active");
+  goInstruction.textContent =
+    "Ready. Press GO to launch.";
+
+  goDisplayButtons.forEach(btn => {
+    btn.disabled = false;
+  });
+}
+
 function resetSelection() {
+
   if (selectedPadElement) {
     selectedPadElement.classList.remove("selected");
   }
+
   selectedPadElement = null;
   selectedLink = null;
+
   goButton.disabled = true;
-  syncGoButtons();
-  statusLed.classList.remove("active");
-  goInstruction.innerHTML = 'Press a Pad then hit <strong>GO</strong> to launch';
-  
-  
-  
-
-    if (section === "about") {
-      display.innerHTML = `
-        <h1>About</h1>
-        <p>Short bio goes here.</p>
-      `;
-    }
-
-
-    if (section === "services") {
-      display.innerHTML = `
-        <h1>Services</h1>
-        <p>Production, Mixing, Mastering</p>
-      `;
-    }
-    
-      if (section === "contact") {
-      display.innerHTML = `
-        <h1>Contact</h1>
-        <p>email@soundmandave.co.uk</p>
-      `;
-    }
+  goDisplayButtons.forEach(btn => {
+    btn.disabled = true;
   });
-});
-  
-  
- 
+
+  statusLed.classList.remove("active");
+
+  goInstruction.innerHTML =
+    'Press a Pad then hit <strong>GO</strong> to launch';
+}
+
+/*
+==================================================
+THEME SYSTEM
+==================================================
+*/
+function applyTheme(bank) {
+
+  if (!bank.theme) return;
+
+  const root = document.documentElement;
+
+  if (bank.theme.primary)
+    root.style.setProperty(
+      "--primary-color",
+      bank.theme.primary
+    );
+
+  if (bank.theme.displayBg)
+    root.style.setProperty(
+      "--display-bg",
+      bank.theme.displayBg
+    );
+
+  if (bank.theme.backgroundImage)
+    root.style.setProperty(
+      "--theme-image",
+      `url(images/${bank.theme.backgroundImage})`
+    );
+}
