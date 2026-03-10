@@ -2,6 +2,43 @@
   "headerTitle": "SOUNDMANDAVE STUDIO TERMINAL",
   "artistName": "soundmandave",
   "tagline": "soundboy done grew up",
+  
+  
+  
+  /* 
+  ==================================================
+  DISPLAY MENU ITEMS
+  These generate the horizontal display menu
+  ==================================================
+  */
+  "displayMenu": [
+    {
+      "label": "About",
+      "type": "content",
+      "title": "About",
+      "content": "<p>Soundman Dave is a producer and engineer.
+      </p><p><strong>Based in London.</strong></p>"
+    },
+    {
+      "label": "Services",
+      "type": "content",
+      "title": "Services",
+      "content": "<ul><li>Production</li><li>Mixing</li><li>Mastering</li></ul>"
+      "bankName": "Bank 3 - Services"
+    },
+    {
+      "label": "Contact",
+       "type": "content",
+      "title": "Contact",
+      "content": "email@soundmandave.co.uk"
+    },
+  {
+    "label": "Latest",
+    "type": "bank",
+    "bankName": "Bank 1 - Latest"
+  }
+  ],
+  
 
   "utilityButtons": [
     { "label": "INSTAGRAM", "url": "https://instagram.com/soundman.dave/" },
@@ -11,7 +48,12 @@
   ],
   "categories": [
     {
-      "name": "Bank 1 - Latest",
+      "name": "Bank 1 - Latest",  //index 0
+       "theme": {       //adding a theme to each pad bank
+    "backgroundImage": "straywave-theme.png",
+    "primary": "#00ff66",
+    "accent": "#ff00aa",
+    "displayBg": "#111111"
       "pads": [
         {
           "displayTitle": "Bin Rich + Singin' To My Plants youtube",

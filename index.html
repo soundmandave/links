@@ -24,21 +24,29 @@
 
       <!-- Display -->
       
-      <div class="display-menu" id="displayMenu">
-  <span data-section="about">About</span>
-  <span data-section="contact">Contact</span>
-  <span data-section="services">Services</span>
-</div>
+     <!-- 
+==================================================
+DISPLAY MENU (BUILT FROM JSON)
+==================================================
+-->
+<div class="display-menu" id="displayMenu"></div>
       
       <div class="display-section">
        <div class="mpc-display">
   <div class="display-inner" id="mpcDisplay"></div>
 
-  <div class="display-buttons">
-    <button id="goBtn">GO</button>
-    <button id="cancelBtn">CANCEL</button>
-  </div>
+  <!-- 
+==================================================
+DISPLAY TRANSPORT (COPY OF BOTTOM TRANSPORT)
+Uses SAME styling class: transport-buttons
+Uses CLASS hooks instead of duplicate IDs
+==================================================
+-->
+<div class="transport-buttons display-transport">
+  <button class="cancel-display">CANCEL</button>
+  <button class="go-display" disabled>GO</button>
 </div>
+
           <h1>Loading...</h1>
         </div>
       </div>

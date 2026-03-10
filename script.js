@@ -16,6 +16,118 @@ fetch("pads.json")
   .then(res => res.json())
   .then(data => {
 
+/*
+==================================================
+BUILD DISPLAY MENU FROM JSON
+Supports:
+- content mode (renders HTML)
+- bank mode (switches pad bank)
+==================================================
+*/
+
+if (data.displayMenu) {
+
+  const displayMenu = document.getElementById("displayMenu");
+
+  data.displayMenu.forEach(menuItem => {
+
+    const span = document.createElement("span");
+    span.textContent = menuItem.label;
+
+    span.addEventListener("click", () => {
+
+      // CONTENT TYPE
+      if (menuItem.type === "content") {
+
+        display.innerHTML = `
+          <h1>${menuItem.title}</h1>
+          ${menuItem.content}
+        `;
+
+      }
+
+      // BANK SWITCH TYPE
+    /*
+==================================================
+BANK SWITCH BY NAME (NOT INDEX)
+==================================================
+*/
+if (menuItem.type === "bank") {
+
+  const bank = data.categories.find(
+    category => category.name === menuItem.bankName
+  );
+
+  if (bank) {
+
+    buildPads(bank.pads, data.artistName);
+
+/*
+==================================================
+APPLY BANK THEME
+==================================================
+*/
+
+if (bank.theme) {
+
+  const root = document.documentElement;
+
+  if (bank.theme.primary)
+    root.style.setProperty('--primary-color', bank.theme.primary);
+
+  if (bank.theme.accent)
+    root.style.setProperty('--accent-color', bank.theme.accent);
+
+  if (bank.theme.displayBg)
+    root.style.setProperty('--display-bg', bank.theme.displayBg);
+
+  if (bank.theme.backgroundImage) {
+    root.style.setProperty(
+      '--theme-image',
+      `url(images/${bank.theme.backgroundImage})`
+    );
+  }
+
+}
+
+
+    // Update active side tab visually
+    document.querySelectorAll(".tab-button")
+      .forEach(t => t.classList.remove("active"));
+
+    const tabButtons = document.querySelectorAll(".tab-button");
+
+    tabButtons.forEach(tab => {
+      if (tab.textContent === bank.name) {
+        tab.classList.add("active");
+      }
+    });
+
+    display.innerHTML = `
+      <h1>${bank.name}</h1>
+      <p>Pad bank loaded.</p>
+    `;
+  }
+  
+  // If bankName exists, switch bank too
+if (menuItem.bankName) {
+
+  const bank = data.categories.find(
+    category => category.name === menuItem.bankName
+  );
+
+  if (bank) {
+    buildPads(bank.pads, data.artistName);
+  }
+}
+}
+
+    displayMenu.appendChild(span);
+
+  });
+
+}	
+
     terminalTitle.textContent = data.headerTitle || "STUDIO TERMINAL";
 
     display.innerHTML = `
@@ -135,6 +247,40 @@ function buildPads(pads, artistName) {
 //Other//Additions
 
 goButton.addEventListener("click", () => {
+/*
+==================================================
+DISPLAY TRANSPORT BUTTON HOOKS
+These reuse existing logic
+==================================================
+*/
+
+const goDisplayButtons = document.querySelectorAll(".go-display");
+const cancelDisplayButtons = document.querySelectorAll(".cancel-display");
+
+// Mirror GO state to display button
+function syncGoButtons() {
+  goDisplayButtons.forEach(btn => {
+    btn.disabled = goButton.disabled;
+  });
+}
+
+// When main GO changes state, sync display copy
+const observer = new MutationObserver(syncGoButtons);
+observer.observe(goButton, { attributes: true });
+
+// GO (display copy)
+goDisplayButtons.forEach(btn => {
+  btn.addEventListener("click", () => {
+    goButton.click(); // trigger original logic
+  });
+});
+
+// CANCEL (display copy)
+cancelDisplayButtons.forEach(btn => {
+  btn.addEventListener("click", () => {
+    cancelButton.click(); // trigger original reset logic
+  });
+});
   if (selectedLink) {
     window.open(selectedLink, "_blank");
     resetSelection();
@@ -150,15 +296,12 @@ function resetSelection() {
   selectedPadElement = null;
   selectedLink = null;
   goButton.disabled = true;
+  syncGoButtons();
   statusLed.classList.remove("active");
   goInstruction.innerHTML = 'Press a Pad then hit <strong>GO</strong> to launch';
   
   
-  const menuItems = document.querySelectorAll("#displayMenu span");
-
-menuItems.forEach(item => {
-  item.addEventListener("click", () => {
-    const section = item.dataset.section;
+  
 
     if (section === "about") {
       display.innerHTML = `
@@ -167,12 +310,6 @@ menuItems.forEach(item => {
       `;
     }
 
-    if (section === "contact") {
-      display.innerHTML = `
-        <h1>Contact</h1>
-        <p>email@soundmandave.co.uk</p>
-      `;
-    }
 
     if (section === "services") {
       display.innerHTML = `
@@ -180,19 +317,15 @@ menuItems.forEach(item => {
         <p>Production, Mixing, Mastering</p>
       `;
     }
+    
+      if (section === "contact") {
+      display.innerHTML = `
+        <h1>Contact</h1>
+        <p>email@soundmandave.co.uk</p>
+      `;
+    }
   });
 });
   
   
-  document.getElementById("cancelBtn").addEventListener("click", () => {
-  display.innerHTML = `
-    <h1>${artistHeader.textContent}</h1>
-    <p>Select Category</p>
-  `;
-});
-
-document.getElementById("goBtn").addEventListener("click", () => {
-  // You can later attach this to launch selected pad
-  console.log("GO pressed");
-});
-}
+ 
