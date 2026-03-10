@@ -1,13 +1,13 @@
 {
   "headerTitle": "SOUNDMANDAVE STUDIO TERMINAL",
   "artistName": "soundmandave",
-  "tagline": "Press a pad to select, then Go at the bottom To LAUNCH",
+  "tagline": "soundboy done grew up",
 
   "utilityButtons": [
     { "label": "INSTAGRAM", "url": "https://instagram.com/soundman.dave/" },
     { "label": "SOUNDCLOUD", "url": "https://soundcloud.com/strayw4ve" },
-    { "label": "BANDCAMP", "url": "https://..." },
-    { "label": "EMAIL", "url": "mailto:soundmandaveldn@gmail.com" }
+    { "label": "YOUTUBE", "url": "https://youtube.com/@straywave2527" },
+    { "label": "EMAIL", "url": "mailto:contact@soundmandave.co.uk" }
   ],
   "categories": [
     {

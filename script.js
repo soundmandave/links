@@ -132,6 +132,8 @@ function buildPads(pads, artistName) {
   padGrid.style.gridTemplateRows = `repeat(${displayCount/4}, 1fr)`;
 }
 
+//Other//Additions
+
 goButton.addEventListener("click", () => {
   if (selectedLink) {
     window.open(selectedLink, "_blank");
@@ -150,4 +152,47 @@ function resetSelection() {
   goButton.disabled = true;
   statusLed.classList.remove("active");
   goInstruction.innerHTML = 'Press a Pad then hit <strong>GO</strong> to launch';
+  
+  
+  const menuItems = document.querySelectorAll("#displayMenu span");
+
+menuItems.forEach(item => {
+  item.addEventListener("click", () => {
+    const section = item.dataset.section;
+
+    if (section === "about") {
+      display.innerHTML = `
+        <h1>About</h1>
+        <p>Short bio goes here.</p>
+      `;
+    }
+
+    if (section === "contact") {
+      display.innerHTML = `
+        <h1>Contact</h1>
+        <p>email@soundmandave.co.uk</p>
+      `;
+    }
+
+    if (section === "services") {
+      display.innerHTML = `
+        <h1>Services</h1>
+        <p>Production, Mixing, Mastering</p>
+      `;
+    }
+  });
+});
+  
+  
+  document.getElementById("cancelBtn").addEventListener("click", () => {
+  display.innerHTML = `
+    <h1>${artistHeader.textContent}</h1>
+    <p>Select Category</p>
+  `;
+});
+
+document.getElementById("goBtn").addEventListener("click", () => {
+  // You can later attach this to launch selected pad
+  console.log("GO pressed");
+});
 }
