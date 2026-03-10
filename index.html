@@ -9,7 +9,6 @@
 <body>
 
 <div class="terminal-wrapper">
-
   <div class="mpc">
 
     <!-- Header -->
@@ -22,32 +21,21 @@
 
     <div class="terminal-body">
 
+      <!-- Display Menu -->
+      <div class="display-menu" id="displayMenu"></div>
+
       <!-- Display -->
-      
-     <!-- 
-==================================================
-DISPLAY MENU (BUILT FROM JSON)
-==================================================
--->
-<div class="display-menu" id="displayMenu"></div>
-      
       <div class="display-section">
-       <div class="mpc-display">
-  <div class="display-inner" id="mpcDisplay"></div>
+        <div class="mpc-display">
 
-  <!-- 
-==================================================
-DISPLAY TRANSPORT (COPY OF BOTTOM TRANSPORT)
-Uses SAME styling class: transport-buttons
-Uses CLASS hooks instead of duplicate IDs
-==================================================
--->
-<div class="transport-buttons display-transport">
-  <button class="cancel-display">CANCEL</button>
-  <button class="go-display" disabled>GO</button>
-</div>
+          <div id="mpcDisplay"></div>
 
-          <h1>Loading...</h1>
+          <!-- Display Transport (Copy of Bottom Transport) -->
+          <div class="transport-buttons display-transport">
+            <button class="cancel-display">CANCEL</button>
+            <button class="go-display" disabled>GO</button>
+          </div>
+
         </div>
       </div>
 
@@ -76,13 +64,11 @@ Uses CLASS hooks instead of duplicate IDs
 
       </div>
 
-      <!-- Utility Strip -->
+      <!-- Utility -->
       <div class="utility-strip" id="utilityStrip"></div>
 
     </div>
-
   </div>
-
 </div>
 
 <script src="script.js"></script>
