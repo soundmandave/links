@@ -1,15 +1,7 @@
-/*
-==================================================
-STUDIO TERMINAL ENGINE (STABLE VERSION)
-JSON‑Driven
-==================================================
-*/
-
 let selectedLink = null;
 let selectedPadElement = null;
-let currentData = null; // store JSON globally
+let currentData = null;
 
-// Core Elements
 const goButton = document.getElementById("goButton");
 const cancelButton = document.getElementById("cancelButton");
 const statusLed = document.getElementById("statusLed");
@@ -20,18 +12,15 @@ const tabBar = document.getElementById("tabBar");
 const utilityStrip = document.getElementById("utilityStrip");
 const display = document.getElementById("mpcDisplay");
 const terminalTitle = document.getElementById("terminalTitle");
-
 const displayMenuContainer = document.getElementById("displayMenu");
 
-// Display transport copies
 const goDisplayButtons = document.querySelectorAll(".go-display");
 const cancelDisplayButtons = document.querySelectorAll(".cancel-display");
 
-/*
-==================================================
-LOAD JSON
-==================================================
-*/
+/* =============================
+   LOAD JSON
+============================= */
+
 fetch("pads.json")
   .then(res => res.json())
   .then(data => {
@@ -57,15 +46,17 @@ fetch("pads.json")
 
   })
   .catch(err => {
-    console.error("JSON Load Error:", err);
+    display.innerHTML = "<h1>JSON Error</h1>";
+    console.error(err);
   });
 
-/*
-==================================================
-DISPLAY MENU
-==================================================
-*/
+/* =============================
+   DISPLAY MENU
+============================= */
+
 function buildDisplayMenu(data) {
+
+  displayMenuContainer.innerHTML = "";
 
   if (!data.displayMenu) return;
 
@@ -73,10 +64,10 @@ function buildDisplayMenu(data) {
 
     const span = document.createElement("span");
     span.textContent = menuItem.label;
+    span.style.cursor = "pointer";
 
     span.addEventListener("click", () => {
 
-      // Render content if present
       if (menuItem.type === "content") {
         display.innerHTML = `
           <h1>${menuItem.title}</h1>
@@ -84,7 +75,6 @@ function buildDisplayMenu(data) {
         `;
       }
 
-      // Switch bank if defined
       if (menuItem.bankName) {
         const bank = data.categories.find(
           cat => cat.name === menuItem.bankName
@@ -102,14 +92,12 @@ function buildDisplayMenu(data) {
     displayMenuContainer.appendChild(span);
 
   });
-
 }
 
-/*
-==================================================
-UTILITY BUTTONS
-==================================================
-*/
+/* =============================
+   UTILITY BUTTONS
+============================= */
+
 function buildUtilityButtons(data) {
 
   if (!data.utilityButtons) return;
@@ -126,12 +114,13 @@ function buildUtilityButtons(data) {
   });
 }
 
-/*
-==================================================
-BANK TABS
-==================================================
-*/
+/* =============================
+   TABS
+============================= */
+
 function buildTabs(data) {
+
+  tabBar.innerHTML = "";
 
   data.categories.forEach((category, index) => {
 
@@ -155,23 +144,20 @@ function buildTabs(data) {
     });
 
     tabBar.appendChild(tab);
-
   });
-
 }
 
 function setActiveTab(name) {
   document.querySelectorAll(".tab-button")
-    .forEach(t => {
-      t.classList.toggle("active", t.textContent === name);
-    });
+    .forEach(t =>
+      t.classList.toggle("active", t.textContent === name)
+    );
 }
 
-/*
-==================================================
-BUILD PADS
-==================================================
-*/
+/* =============================
+   BUILD PADS
+============================= */
+
 function buildPads(pads, artistName) {
 
   padGrid.innerHTML = "";
@@ -185,16 +171,13 @@ function buildPads(pads, artistName) {
   else displayCount = 16;
 
   const padded = [...pads];
-  while (padded.length < displayCount) {
-    padded.push({});
-  }
+  while (padded.length < displayCount) padded.push({});
 
   padded.forEach((pad, index) => {
 
     const padElement = document.createElement("div");
     padElement.classList.add("pad");
 
-    // Thumbnail
     if (pad.thumbnail) {
       const img = document.createElement("img");
       img.src = "images/" + pad.thumbnail;
@@ -205,7 +188,6 @@ function buildPads(pads, artistName) {
       padElement.appendChild(img);
     }
 
-    // Label
     const label = document.createElement("div");
     label.classList.add("pad-label");
     label.textContent =
@@ -222,13 +204,10 @@ function buildPads(pads, artistName) {
 
       selectedLink = pad.link || null;
 
-      if (selectedLink) {
-        enableGo();
-      }
+      if (selectedLink) enableGo();
 
-      if (pad.sound) {
+      if (pad.sound)
         new Audio("sounds/" + pad.sound).play();
-      }
 
       display.innerHTML = `
         <h1>${artistName}</h1>
@@ -238,18 +217,15 @@ function buildPads(pads, artistName) {
     });
 
     padGrid.appendChild(padElement);
-
   });
 
   padGrid.style.gridTemplateRows =
     `repeat(${displayCount / 4}, 1fr)`;
 }
 
-/*
-==================================================
-GO / CANCEL
-==================================================
-*/
+/* =============================
+   GO / CANCEL
+============================= */
 
 goButton.addEventListener("click", () => {
   if (selectedLink) {
@@ -261,42 +237,34 @@ goButton.addEventListener("click", () => {
 cancelButton.addEventListener("click", resetSelection);
 
 // Display transport copies
-goDisplayButtons.forEach(btn => {
-  btn.addEventListener("click", () => {
-    goButton.click();
-  });
-});
+goDisplayButtons.forEach(btn =>
+  btn.addEventListener("click", () => goButton.click())
+);
 
-cancelDisplayButtons.forEach(btn => {
-  btn.addEventListener("click", () => {
-    cancelButton.click();
-  });
-});
+cancelDisplayButtons.forEach(btn =>
+  btn.addEventListener("click", () => cancelButton.click())
+);
 
 function enableGo() {
+
   goButton.disabled = false;
+  goDisplayButtons.forEach(btn => btn.disabled = false);
+
   statusLed.classList.add("active");
   goInstruction.textContent =
     "Ready. Press GO to launch.";
-
-  goDisplayButtons.forEach(btn => {
-    btn.disabled = false;
-  });
 }
 
 function resetSelection() {
 
-  if (selectedPadElement) {
+  if (selectedPadElement)
     selectedPadElement.classList.remove("selected");
-  }
 
   selectedPadElement = null;
   selectedLink = null;
 
   goButton.disabled = true;
-  goDisplayButtons.forEach(btn => {
-    btn.disabled = true;
-  });
+  goDisplayButtons.forEach(btn => btn.disabled = true);
 
   statusLed.classList.remove("active");
 
@@ -304,11 +272,10 @@ function resetSelection() {
     'Press a Pad then hit <strong>GO</strong> to launch';
 }
 
-/*
-==================================================
-THEME SYSTEM
-==================================================
-*/
+/* =============================
+   THEME
+============================= */
+
 function applyTheme(bank) {
 
   if (!bank.theme) return;
