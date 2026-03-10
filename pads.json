@@ -5,12 +5,6 @@
   
   
   
-  /* 
-  ==================================================
-  DISPLAY MENU ITEMS
-  These generate the horizontal display menu
-  ==================================================
-  */
   "displayMenu": [
     {
       "label": "About",
@@ -23,7 +17,7 @@
       "label": "Services",
       "type": "content",
       "title": "Services",
-      "content": "<ul><li>Production</li><li>Mixing</li><li>Mastering</li></ul>"
+      "content": "<ul><li>Production</li><li>Mixing</li><li>Mastering</li></ul>",
       "bankName": "Bank 3 - Services"
     },
     {
@@ -48,12 +42,13 @@
   ],
   "categories": [
     {
-      "name": "Bank 1 - Latest",  //index 0
-       "theme": {       //adding a theme to each pad bank
+      "name": "Bank 1 - Latest", 
+       "theme": {      
     "backgroundImage": "straywave-theme.png",
     "primary": "#00ff66",
     "accent": "#ff00aa",
     "displayBg": "#111111"
+    },
       "pads": [
         {
           "displayTitle": "Bin Rich + Singin' To My Plants youtube",
@@ -146,7 +141,7 @@
         {
           "displayTitle": "BIN RICH on Instagram",
           "padLabel": "BINSTAGRAM",
-          "link": "instagram.com/binrichbish/",
+          "link": "https://www.instagram.com/binrichbish/",
           "thumbnail": "binstagram.png",
           "color": "#00ff66",
           "sound": "Wheel Up Signal Misc Jungle.wav"
