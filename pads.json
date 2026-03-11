@@ -43,7 +43,7 @@
       "name": "Bank 1 - Links", 
        "theme":  
      {    
-    "backgroundImage": "cowriebayfullpng.png",
+    "backgroundImage": "cowriebayfull.png",
     "primary": "#00ff66",
     "accent": "#ff00aa",
     "displayBg": "#111111"
