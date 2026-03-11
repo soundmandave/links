@@ -1,7 +1,7 @@
 {
   "headerTitle": "SOUNDMANDAVE STUDIO TERMINAL",
-  "artistName": "soundmandave",
-  "tagline": "soundboy done grew up",
+  "artistName": "home of david berry aka soundmandave aka straywave",
+  "tagline": "resident wizard",
   
   
   
@@ -10,7 +10,7 @@
     "label": "About",
     "type": "content",
     "title": "About",
-    "content": "<p> Soundman Dave is a Musician, Producer and Audio Engineer from the UK.\nCreative output ranges from Piano Compositions & Ambient works to Jungle Music & Grime.  </p><p><strong>Based in East London</strong></p>"
+    "content": "<p> Soundman Dave is a Musician, Producer and Audio Engineer from the UK. \n Creative output ranges from Piano Compositions & Ambient works to Jungle Music & Grime. All time love of music.  </p><p><strong>Based in East London</strong></p>"
   },
   {
     "label": "Services",
@@ -40,10 +40,10 @@
   ],
   "categories": [
     {
-      "name": "Bank 1 - Latest", 
+      "name": "Bank 1 - Links", 
        "theme":  
      {    
-    "backgroundImage": "straywave-theme.png",
+    "backgroundImage": "straywave.png",
     "primary": "#00ff66",
     "accent": "#ff00aa",
     "displayBg": "#111111"
