@@ -95,6 +95,7 @@ body {
 
 .display-menu span:hover {
   text-decoration: underline;
+  white-space: pre;
 }
 
 .display-buttons {
@@ -119,7 +120,6 @@ body {
   content: "";
   position: absolute;
   inset: 0;
-  white-space: pre;
   background: repeating-linear-gradient(
     to bottom,
     rgba(0,255,102,0.03),
