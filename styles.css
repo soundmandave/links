@@ -90,12 +90,13 @@ body {
   margin-bottom: 10px;
   font-family: "Courier New", monospace;
   color: #00ff66;
+  white-space: pre;
   cursor: pointer;
 }
 
 .display-menu span:hover {
   text-decoration: underline;
-  white-space: pre;
+  
 }
 
 .display-buttons {
