@@ -75,7 +75,7 @@ body {
   margin-bottom: 15px;
   border: inset 4px #333;
   text-align: center;
-  min-height: 250px;   /* increase height */
+  min-height: 240px;   /* increase height */
 }
 
 .display-transport {
@@ -96,6 +96,7 @@ body {
 
 .display-menu span:hover {
   text-decoration: underline;
+  white-space: pre;
   
 }
 
