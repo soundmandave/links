@@ -30,7 +30,7 @@
     "type": "content",
     "title": "David Berry",
     "content": "<p> Projects that find a home under David Berry releases will probably fall under the acoustic, soundscapes, compositions, piano,  ambient & jazz aspects of the musical spectrum. </p>",
-    "bankName": "Bank 3 - David Berry"
+    "bankName": "Bank 2 - David Berry"
   }
 ],
 
@@ -150,9 +150,147 @@
         }
       ]
     },
+
+    
+    
     {
-      "name": "",
-      "pads": []
+       "name": "Bank 2 - David Berry", 
+       "theme":  
+     {    
+    "backgroundImage": "leavesonastream1080full.png",
+    "primary": "#00ff66",
+    "accent": "#ff00aa",
+    "displayBg": "#111111"
+     },
+      "pads": [  {
+         "displayTitle": "Listen to Leaves On A Stream on Bandcamp",
+          "padLabel": "Leaves On A Stream Bandcamp",
+          "link": "https://davidberrysounds.bandcamp.com/album/leaves-on-a-stream",
+          "thumbnail": "leaves.png",
+          "color": "#00ff66",
+          "sound": "Wheel Up Signal Misc Jungle.wav"
+        },
+         {
+          "displayTitle": "Listen to Cowry Bay 1 on Bandcamp",
+          "padLabel": "Cowry Bay 1 Bandcamp",
+          "link": "https://davidberrysounds.bandcamp.com/album/cowry-bay-1",
+          "thumbnail": "cowrybay.png",
+          "color": "#00ff66",
+          "sound": "Wheel Up Signal Misc Jungle.wav"
+        },
+         {
+          "displayTitle": "Listen to Cowry Bay 2 on Bandcamp",
+          "padLabel": "Cowry Bay 2 Bandcamp",
+          "link": "https://davidberrysounds.bandcamp.com/album/cowry-bay-2",
+          "thumbnail": "cowrybay.png",
+          "color": "#00ff66",
+          "sound": "Wheel Up Signal Misc Jungle.wav"
+        },
+         {
+          "displayTitle": "Support David Berry on Bandcamp",
+          "padLabel": "",
+          "link": "https://davidberrysounds.bandcamp.com/",
+          "thumbnail": "bandcampthumbnail.png",
+          "color": "#00ff66",
+          "sound": "Wheel Up Signal Misc Jungle.wav"
+        },
+       {
+         "displayTitle": "Listen to Leaves On A Stream Full Album on Youtube",
+          "padLabel": "Leaves On A Stream Youtube",
+          "link": "https://www.youtube.com/watch?v=nkfvsEBHuQM",
+          "thumbnail": "leaves.png",
+          "color": "#00ff66",
+          "sound": "Wheel Up Signal Misc Jungle.wav"
+        },
+         {
+          "displayTitle": "Listen to Cowry Bay Full on Youtube",
+          "padLabel": "Cowry Bay Full Youtube",
+          "link": "https://www.youtube.com/watch?v=2a4LeIdVt8E&t=3712s",
+          "thumbnail": "cowrybay.png",
+          "color": "#00ff66",
+          "sound": "Wheel Up Signal Misc Jungle.wav"
+        },
+         {
+          "displayTitle": "Check out this Piano Improvisation",
+          "padLabel": "Autumn Piano Improvisation",
+          "link": "https://www.youtube.com/watch?v=Xx0z4r4MsGc",
+          "thumbnail": "autumnpianoimprov.png",
+          "color": "#00ff66",
+          "sound": "Wheel Up Signal Misc Jungle.wav"
+        },
+         {
+          "displayTitle": "Check out my Youtube Channel",
+          "padLabel": "",
+          "link": "https://www.youtube.com/@straywave2527/",
+          "thumbnail": "youtubethumbnail.png",
+          "color": "#00ff66",
+          "sound": "Wheel Up Signal Misc Jungle.wav"
+        }, 
+         {
+         "displayTitle": "Listen to Leaves On A Stream on Soundcloud",
+          "padLabel": "",
+          "link": "https://soundcloud.com/davidberrysounds/sets/leaves-on-a-stream-full-album",
+          "thumbnail": "leaves.png",
+          "color": "#00ff66",
+          "sound": "Wheel Up Signal Misc Jungle.wav"
+        },
+         {
+          "displayTitle": "Listen to Cowry Bay 1 on Soundcloud",
+          "padLabel": "",
+          "link": "https://soundcloud.com/davidberrysounds/sets/cowry-bay-1",
+          "thumbnail": "cowrybay.png",
+          "color": "#00ff66",
+          "sound": "Wheel Up Signal Misc Jungle.wav"
+        },
+         {
+          "displayTitle": "Listen to Cowry Bay 2 on Soundcloud",
+          "padLabel": "",
+          "link": "https://soundcloud.com/davidberrysounds/sets/cowry-bay-2",
+          "thumbnail": "cowrybay.png",
+          "color": "#00ff66",
+          "sound": "Wheel Up Signal Misc Jungle.wav"
+        },
+         {
+          "displayTitle": "Listen to the tracks on Soundcloud",
+          "padLabel": "",
+          "link": "https://soundcloud.com/davidberrysounds/albums",
+          "thumbnail": "soundcloudthumbnail.png",
+          "color": "#00ff66",
+          "sound": "Wheel Up Signal Misc Jungle.wav"
+        }, 
+         {
+         "displayTitle": "Listen to Leaves On A Stream on Streaming Services",
+          "padLabel": "",
+          "link": "https://artists.landr.com/davidberry",
+          "thumbnail": "leaves.png",
+          "color": "#00ff66",
+          "sound": "Wheel Up Signal Misc Jungle.wav"
+        },
+         {
+          "displayTitle": "Listen to Cowry Bay 1 on Streaming Services",
+          "padLabel": "",
+          "link": "https://artists.landr.com/CowryBay1",
+          "thumbnail": "cowrybay.png",
+          "color": "#00ff66",
+          "sound": "Wheel Up Signal Misc Jungle.wav"
+        },
+         {
+          "displayTitle": "Listen to Cowry Bay 2 on Streaming Services",
+          "padLabel": "",
+          "link": "https://artists.landr.com/055905848257",
+          "thumbnail": "cowrybay.png",
+          "color": "#00ff66",
+          "sound": "Wheel Up Signal Misc Jungle.wav"
+        },
+         {
+          "displayTitle": "Follow soundman dave On Instagram",
+          "padLabel": "",
+          "link": "https://www.instagram.com/soundman.dave/",
+          "thumbnail": "soundcloudthumbnail.png",
+          "color": "#00ff66",
+          "sound": "Wheel Up Signal Misc Jungle.wav"
+        }, 
+      ]
     },
     {
       "name": "",
