@@ -16,8 +16,8 @@
     "label": "Services",
     "type": "content",
     "title": "Services",
-    "content": "<ul><li>Production</li><li>Mixing</li><li>Mastering</li><li>Keyboards/Piano</li><li>DJ</li><li>Sound Tech & Audio Visual</ul>",
-    "bankName": "Bank 2 - Services"
+    "content": "<ul><li>Production</li><li>Recording</li><li>Mixing</li><li>Mastering</li><li>Keyboards/Piano</li><li>DJ</li><li>Sound Tech & Audio Visual</ul>",
+    "bankName": "Bank 1 - Services"
   },
   {
     "label": "Contact",
@@ -29,7 +29,7 @@
     "label": "David Berry",
     "type": "content",
     "title": "David Berry",
-    "content": "<p> Projects that find a home under David Berry releases will probably fall under the acoustic, soundscapes, compositions, piano,  ambient & jazz aspects of the musical spectrum. </p>",
+    "content": "<p> At some point in my creative journey I realised I would benefit from separating my Creative output into broad categories when it comes to releasing Music - as the range of influence & styles was varying quite a lot. Releases as David Berry will probably fall under the acoustic, soundscape, composition, piano, ambient & jazz aspects of the musical spectrum. </p>",
     "bankName": "Bank 2 - David Berry"
   }
 ],
@@ -42,10 +42,10 @@
   ],
   "categories": [
     {
-      "name": "Bank 1 - Links", 
+      "name": "Bank 1 - Services", 
        "theme":  
      {    
-    "backgroundImage": "cowriebayfull2.png",
+    "backgroundImage": "korgbackground.jpeg",
     "primary": "#00ff66",
     "accent": "#ff00aa",
     "displayBg": "#111111"
@@ -53,102 +53,38 @@
   
       "pads": [
         {
-          "displayTitle": "Bin Rich + Singin To My Plants youtube",
-          "padLabel": "Bin Rich + Singin To My Plants youtube",
-          "link": "https://www.youtube.com/watch?v=vbRkkl07txs",
-          "thumbnail": "childrenofriddimbinrichsingintomyplants.png",
+          "displayTitle": "Mixing </li><li> Lite (1-10 Tracks) - £40 </li><li> Mid (11-25 Tracks) - £60 </li><li> Standard (26-50 Tracks) - £80) </li><li> Standard+ (50+ Tracks) - £100 </li><li> ALL MIXING INCLUDES FREE ROUGH MASTER </li><li> MP3 & WAV Files Provided, Mixes peak to -6dB and Master to 0dB & Industry Standard Loudness </li><li> Pro Mastering - £40 </li><li> Deals Available",
+          "padLabel": "Mixing & Mastering",
+          "link": "",
+          "thumbnail": "mixingdesk.png",
           "color": "#00ff66",
           "sound": "Wheel Up Signal Misc Jungle.wav"
         },
         {
-          "displayTitle": "straywave - winter solstice deep dubstep mix",
-          "padLabel": "straywave - winter solstice deep dubstep mix",
-          "link": "https://soundcloud.com/strayw4ve/winter-solstice-deep-dubstep-mix-mode-london",
-          "thumbnail": "wintersolsticedeepdubstepmix.png",
+          "displayTitle": "Track Production </li><li> Sessions </li><li> Bespoke Composition </li><li> Remixes ",
+          "padLabel": "Music Production",
+          "link": "",
+          "thumbnail": "composition.jpeg",
           "color": "#00ff66",
           "sound": "Wheel Up Signal Misc Jungle.wav"
         },
         {
-          "displayTitle": "leaves on a stream full album youtube",
-          "padLabel": "david berry - leaves on a stream youtube",
-          "link": "https://www.youtube.com/watch?v=nkfvsEBHuQM&t=1393s",
+          "displayTitle": "Recording Only Sessions are available </li><li> £15 an hour includes Rough Mix Free",
+          "padLabel": "Recording",
+          "link": "",
           "thumbnail": "leaves.png",
           "color": "#00ff66",
           "sound": "Wheel Up Signal Misc Jungle.wav"
         },
         {
-          "displayTitle": "Cowry Bay 1 + 2 full album youtube",
-          "padLabel": "david berry - Cowry Bay 1 + 2 youtube",
-          "link": "https://www.youtube.com/watch?v=2a4LeIdVt8E&t=3710s",
-          "thumbnail": "cowrybay.png",
-          "color": "#00ff66",
-          "sound": "Wheel Up Signal Misc Jungle.wav"
-        },
-        {
-          "displayTitle": "Listen to supafly on streaming services (not spotify)",
-          "padLabel": "Listen to BIN RICH - Supafly",
-          "link": "https://artists.landr.com/055905717232",
-          "thumbnail": "supafly.png",
-          "color": "#00ff66",
-          "sound": "Wheel Up Signal Misc Jungle.wav"
-        },
-        {
-          "displayTitle": "Listen to TIP DRAP on streaming services (not spotify)",
-          "padLabel": "Listen to BIN RICH - TIP DRAP",
-          "link": "https://artists.landr.com/055905903864",
-          "thumbnail": "tipdrap.png",
-          "color": "#00ff66",
-          "sound": "Wheel Up Signal Misc Jungle.wav"
-        },
-        {
-          "displayTitle": "Listen to Leaves On A Stream on streaming services",
-          "padLabel": "David Berry - Leaves On A Stream on Streaming Services",
-          "link": "https://artists.landr.com/davidberry",
-          "thumbnail": "leaves.png",
-          "color": "#00ff66",
-          "sound": "Wheel Up Signal Misc Jungle.wav"
-        },
-        {
-          "displayTitle": "Listen to Cowry Bay on streaming services",
-          "padLabel": "David Berry - Cowry Bay on Streaming Services",
-          "link": "https://artists.landr.com/CowryBay1",
-          "thumbnail": "cowrybay.png",
-          "color": "#00ff66",
-          "sound": "Wheel Up Signal Misc Jungle.wav"
-        },
-        {
-          "displayTitle": "straywave on Soundcloud",
-          "padLabel": "straywave on Soundcloud",
-          "link": "https://soundcloud.com/strayw4ve",
-          "thumbnail": "straywave.png",
-          "color": "#00ff66",
-          "sound": "Wheel Up Signal Misc Jungle.wav"
-        },
-        {
-          "displayTitle": "BIN RICH on Soundcloud",
-          "padLabel": "BIN RICH on Soundcloud",
-          "link": "https://soundcloud.com/bin-rich",
-          "thumbnail": "binrich.png",
-          "color": "#00ff66",
-          "sound": "Wheel Up Signal Misc Jungle.wav"
-        },
-        {
-          "displayTitle": "straywave on Instagram",
-          "padLabel": "stray gram",
-          "link": "https://www.instagram.com/soundman.dave/",
-          "thumbnail": "straygram.png",
-          "color": "#00ff66",
-          "sound": "Wheel Up Signal Misc Jungle.wav"
-        },
-        {
-          "displayTitle": "BIN RICH on Instagram",
-          "padLabel": "BINSTAGRAM",
-          "link": "https://www.instagram.com/binrichbish/",
-          "thumbnail": "binstagram.png",
+          "displayTitle": "DJ + Sound Tech + Other Enquiries",
+          "padLabel": "Enquiries",
+          "link": "",
+          "thumbnail": "microphone.jpeg",
           "color": "#00ff66",
           "sound": "Wheel Up Signal Misc Jungle.wav"
         }
-      ]
+        ]
     },
 
        {
