@@ -162,35 +162,35 @@
      },
       "pads": [     {
           "displayTitle": "Support David Berry on Bandcamp",
-          "padLabel": "",
+          "padLabel": "Bandcamp",
           "link": "https://davidberrysounds.bandcamp.com/",
           "thumbnail": "bandcampthumbnail.png",
           "color": "#00ff66",
-          "sound": "Wheel Up Signal Misc Jungle.wav"
+          "sound": "Bringing Me Dolphins Misc Jungle.wav"
         },
            {
           "displayTitle": "Check out my Youtube Channel",
-          "padLabel": "",
+          "padLabel": "Youtube",
           "link": "https://www.youtube.com/@straywave2527/",
           "thumbnail": "youtubethumbnail.png",
           "color": "#00ff66",
-          "sound": "Wheel Up Signal Misc Jungle.wav"
+          "sound": "Bringing Me Dolphins Misc Jungle.wav"
         }, 
           {
           "displayTitle": "Listen to the tracks on Soundcloud",
-          "padLabel": "",
+          "padLabel": "Soundcloud",
           "link": "https://soundcloud.com/davidberrysounds/albums",
           "thumbnail": "soundcloudthumbnail.png",
           "color": "#00ff66",
-          "sound": "Wheel Up Signal Misc Jungle.wav"
+          "sound": "Bringing Me Dolphins Misc Jungle.wav"
         }, 
           {
          "displayTitle": "Find David Berry on Streaming Services",
-          "padLabel": "",
+          "padLabel": "Streaming Services",
           "link": "https://artists.landr.com/davidberry",
           "thumbnail": "streaming.png",
           "color": "#00ff66",
-          "sound": "Wheel Up Signal Misc Jungle.wav"
+          "sound": "Bringing Me Dolphins Misc Jungle.wav"
         },
 
     {
@@ -199,32 +199,32 @@
           "link": "https://davidberrysounds.bandcamp.com/album/leaves-on-a-stream",
           "thumbnail": "leaves.png",
           "color": "#00ff66",
-          "sound": "Wheel Up Signal Misc Jungle.wav"
+          "sound": "Bringing Me Dolphins Misc Jungle.wav"
         },
 
          {
-          "displayTitle": "Listen to Cowry Bay Full on Youtube",
-          "padLabel": "Cowry Bay Full Youtube",
+          "displayTitle": "Listen to Cowry Bay 1+2 on Youtube",
+          "padLabel": "Cowry Bay 1+2 Youtube",
           "link": "https://www.youtube.com/watch?v=2a4LeIdVt8E&t=3712s",
           "thumbnail": "cowrybay.png",
           "color": "#00ff66",
-          "sound": "Wheel Up Signal Misc Jungle.wav"
+          "sound": "Bringing Me Dolphins Misc Jungle.wav"
         },
        {
           "displayTitle": "Listen to Cowry Bay 2 on Soundcloud",
-          "padLabel": "",
+          "padLabel": "Cowry Bay 2 Soundcloud",
           "link": "https://soundcloud.com/davidberrysounds/sets/cowry-bay-2",
           "thumbnail": "cowrybay.png",
           "color": "#00ff66",
-          "sound": "Wheel Up Signal Misc Jungle.wav"
+          "sound": "Bringing Me Dolphins Misc Jungle.wav"
         },
        {
           "displayTitle": "Listen to Cowry Bay 2 on Streaming Services",
-          "padLabel": "",
+          "padLabel": "Cowry Bay 2 on Streaming Services",
           "link": "https://artists.landr.com/055905848257",
           "thumbnail": "cowrybay.png",
           "color": "#00ff66",
-          "sound": "Wheel Up Signal Misc Jungle.wav"
+          "sound": "Bringing Me Dolphins Misc Jungle.wav"
         }      
         ]
     },
