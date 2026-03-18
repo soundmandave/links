@@ -83,7 +83,39 @@
           "thumbnail": "composition.jpeg",
           "color": "#00ff66",
           "sound": "Wheel Up Signal Misc Jungle.wav"
-        }
+        },
+            {
+          "displayTitle": "Book a session by emailing me at contact@soundmandave.co.uk",
+          "padLabel": "Email to book",
+          "link": "",
+          "thumbnail": "enquiries.jpeg",
+          "color": "#00ff66",
+          "sound": "Wheel Up Signal Misc Jungle.wav"
+        },
+              {
+          "displayTitle": "Book a session by emailing me at contact@soundmandave.co.uk",
+          "padLabel": "Email to book",
+          "link": "",
+          "thumbnail": "enquiries.jpeg",
+          "color": "#00ff66",
+          "sound": "Wheel Up Signal Misc Jungle.wav"
+        },
+              {
+          "displayTitle": "Book a session by emailing me at contact@soundmandave.co.uk",
+          "padLabel": "Email to book",
+          "link": "",
+          "thumbnail": "enquiries.jpeg",
+          "color": "#00ff66",
+          "sound": "Wheel Up Signal Misc Jungle.wav"
+        },
+              {
+          "displayTitle": "Book a session by emailing me at contact@soundmandave.co.uk",
+          "padLabel": "Email to book",
+          "link": "",
+          "thumbnail": "enquiries.jpeg",
+          "color": "#00ff66",
+          "sound": "Wheel Up Signal Misc Jungle.wav"
+        },
         ]
     },
 
@@ -132,8 +164,8 @@
     {
          "displayTitle": "Buy Leaves On A Stream on Bandcamp",
           "padLabel": "Leaves On A Stream Bandcamp",
-          "link": "https://davidberrysounds.bandcamp.com/album/leaves-on-a-stream",
-          "thumbnail": "leaves.png",
+          "link": "https://davidberrysounds.bandcamp.com/album/cowry-bay-2",
+          "thumbnail": "cowrybay.png",
           "color": "#00ff66",
           "sound": "Bringing Me Dolphins Misc Jungle.wav"
         },
