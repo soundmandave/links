@@ -45,7 +45,7 @@
       "name": "Bank 1 - Services", 
        "theme":  
      {    
-    "backgroundImage": "korgbackground.jpeg",
+    "backgroundImage": "woodtexture.jpeg",
     "primary": "#00ff66",
     "accent": "#ff00aa",
     "displayBg": "#111111"
@@ -80,7 +80,7 @@
           "displayTitle": "DJ + Sound Tech + Other Enquiries",
           "padLabel": "Enquiries",
           "link": "",
-          "thumbnail": "dustydecks.jpeg",
+          "thumbnail": "korgsun.jpeg",
           "color": "#00ff66",
           "sound": "Wheel Up Signal Misc Jungle.wav"
         }
