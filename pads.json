@@ -45,7 +45,7 @@
       "name": "Bank 1 - Services", 
        "theme":  
      {    
-    "backgroundImage": "woodtexture.jpeg",
+    "backgroundImage": "spstudioart",
     "primary": "#00ff66",
     "accent": "#ff00aa",
     "displayBg": "#111111"
@@ -61,10 +61,10 @@
           "sound": "Wheel Up Signal Misc Jungle.wav"
         },
         {
-          "displayTitle": "Track Production </li><li> Sessions </li><li> Bespoke Composition </li><li> Remixes ",
+          "displayTitle": "Track Production </li><li> Sessions </li><li> Bespoke Composition </li><li> Remixes </li><li> Help Finishing Tracks </li><li> ",
           "padLabel": "Music Production",
           "link": "",
-          "thumbnail": "composition.jpeg",
+          "thumbnail": "korgsun.jpeg",
           "color": "#00ff66",
           "sound": "Wheel Up Signal Misc Jungle.wav"
         },
@@ -80,7 +80,7 @@
           "displayTitle": "DJ + Sound Tech + Other Enquiries",
           "padLabel": "Enquiries",
           "link": "",
-          "thumbnail": "enquiries.jpeg",
+          "thumbnail": "composition.jpeg",
           "color": "#00ff66",
           "sound": "Wheel Up Signal Misc Jungle.wav"
         }
