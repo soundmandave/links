@@ -45,7 +45,7 @@
       "name": "Bank 1 - Services", 
        "theme":  
      {    
-    "backgroundImage": "spstudioart",
+    "backgroundImage": "Final leaves in jungle2.png",
     "primary": "#00ff66",
     "accent": "#ff00aa",
     "displayBg": "#111111"
@@ -53,12 +53,12 @@
   
       "pads": [
         {
-          "displayTitle": "Mixing </li><li> Lite (1-10 Stems) - £40 </li><li> Mid (11-25 Stems) - £60 </li><li> Standard (26-50 Stems) - £80) </li><li> Standard+ (50+ Stems) - £100 </li><li> ALL MIXING INCLUDES FREE ROUGH MASTER </li><li> MP3 & WAV Files Provided, Mixes peak to -6dB and Master to 0dB & Industry Standard Loudness </li><li> Pro Mastering - £40 </li><li> Deals Available",
+          "displayTitle": "Mixing - Rates Guide - </li><li> Lite (1-10 Stems) - £40 </li><li> Mid (11-25 Stems) - £60 </li><li> Standard (26-50 Stems) - £80) </li><li> Standard+ (50+ Stems) - £100 </li><li> ALL MIXING INCLUDES FREE ROUGH MASTER </li><li> MP3 & WAV Files Provided, Mixes peak to -6dB and Master to 0dB & Industry Standard Loudness </li><li> Pro Mastering </li><li> Deals Available",
           "padLabel": "Mixing & Mastering",
           "link": "",
           "thumbnail": "mixingdesk.png",
           "color": "#00ff66",
-          "sound": "Wheel Up Signal Misc Jungle.wav"
+          "sound": "Wheel Up Signal Misc Jungle"
         },
         {
           "displayTitle": "Track Production </li><li> Sessions </li><li> Bespoke Composition </li><li> Remixes </li><li> Help Finishing Tracks </li><li> ",
@@ -66,7 +66,7 @@
           "link": "",
           "thumbnail": "korgsun.jpeg",
           "color": "#00ff66",
-          "sound": "Wheel Up Signal Misc Jungle.wav"
+          "sound": "Wheel Up Signal Misc Jungle"
         },
         {
           "displayTitle": "Recording Only Sessions are available </li><li> £15 an hour includes Rough Mix Free",
@@ -74,7 +74,7 @@
           "link": "",
           "thumbnail": "microphone.jpeg",
           "color": "#00ff66",
-          "sound": "Wheel Up Signal Misc Jungle.wav"
+          "sound": "Wheel Up Signal Misc Jungle"
         },
         {
           "displayTitle": "DJ + Sound Tech + Other Enquiries",
@@ -82,7 +82,7 @@
           "link": "",
           "thumbnail": "composition.jpeg",
           "color": "#00ff66",
-          "sound": "Wheel Up Signal Misc Jungle.wav"
+          "sound": "Wheel Up Signal Misc Jungle"
         },
             {
           "displayTitle": "Book a session by emailing me at contact@soundmandave.co.uk",
@@ -90,7 +90,7 @@
           "link": "",
           "thumbnail": "enquiries.jpeg",
           "color": "#00ff66",
-          "sound": "Wheel Up Signal Misc Jungle.wav"
+          "sound": "Wheel Up Signal Misc Jungle"
         },
               {
           "displayTitle": "Book a session by emailing me at contact@soundmandave.co.uk",
@@ -98,7 +98,7 @@
           "link": "",
           "thumbnail": "enquiries.jpeg",
           "color": "#00ff66",
-          "sound": "Wheel Up Signal Misc Jungle.wav"
+          "sound": "Wheel Up Signal Misc Jungle"
         },
               {
           "displayTitle": "Book a session by emailing me at contact@soundmandave.co.uk",
@@ -106,7 +106,7 @@
           "link": "",
           "thumbnail": "enquiries.jpeg",
           "color": "#00ff66",
-          "sound": "Wheel Up Signal Misc Jungle.wav"
+          "sound": "Wheel Up Signal Misc Jungle"
         },
               {
           "displayTitle": "Book a session by emailing me at contact@soundmandave.co.uk",
@@ -114,7 +114,7 @@
           "link": "",
           "thumbnail": "enquiries.jpeg",
           "color": "#00ff66",
-          "sound": "Wheel Up Signal Misc Jungle.wav"
+          "sound": "Wheel Up Signal Misc Jungle"
         }
         ]
     },
@@ -134,7 +134,7 @@
           "link": "https://davidberrysounds.bandcamp.com/",
           "thumbnail": "bandcampthumbnail.png",
           "color": "#00ff66",
-          "sound": "Bringing Me Dolphins Misc Jungle.wav"
+          "sound": "Bringing Me Dolphins Misc Jungle"
         },
            {
           "displayTitle": "Check out my Youtube Channel",
@@ -142,7 +142,7 @@
           "link": "https://www.youtube.com/@straywave2527/",
           "thumbnail": "youtubethumbnail.png",
           "color": "#00ff66",
-          "sound": "Bringing Me Dolphins Misc Jungle.wav"
+          "sound": "Bringing Me Dolphins Misc Jungle"
         }, 
           {
           "displayTitle": "Listen to the tracks on Soundcloud",
@@ -150,7 +150,7 @@
           "link": "https://soundcloud.com/davidberrysounds/albums",
           "thumbnail": "soundcloudthumbnail.png",
           "color": "#00ff66",
-          "sound": "Bringing Me Dolphins Misc Jungle.wav"
+          "sound": "Bringing Me Dolphins Misc Jungle"
         }, 
           {
          "displayTitle": "Find David Berry on Streaming Services",
@@ -158,7 +158,7 @@
           "link": "https://artists.landr.com/davidberry",
           "thumbnail": "streaming.png",
           "color": "#00ff66",
-          "sound": "Bringing Me Dolphins Misc Jungle.wav"
+          "sound": "Bringing Me Dolphins Misc Jungle"
         },
 
     {
@@ -167,7 +167,7 @@
           "link": "https://davidberrysounds.bandcamp.com/album/cowry-bay-2",
           "thumbnail": "cowrybay.png",
           "color": "#00ff66",
-          "sound": "Bringing Me Dolphins Misc Jungle.wav"
+          "sound": "Bringing Me Dolphins Misc Jungle"
         },
 
          {
@@ -176,7 +176,7 @@
           "link": "https://www.youtube.com/watch?v=2a4LeIdVt8E&t=3712s",
           "thumbnail": "cowrybay.png",
           "color": "#00ff66",
-          "sound": "Bringing Me Dolphins Misc Jungle.wav"
+          "sound": "Bringing Me Dolphins Misc Jungle"
         },
        {
           "displayTitle": "Listen to Cowry Bay 2 on Soundcloud",
@@ -184,7 +184,7 @@
           "link": "https://soundcloud.com/davidberrysounds/sets/cowry-bay-2",
           "thumbnail": "cowrybay.png",
           "color": "#00ff66",
-          "sound": "Bringing Me Dolphins Misc Jungle.wav"
+          "sound": "Bringing Me Dolphins Misc Jungle"
         },
        {
           "displayTitle": "Listen to Cowry Bay 2 on Streaming Services",
@@ -192,7 +192,7 @@
           "link": "https://artists.landr.com/055905848257",
           "thumbnail": "cowrybay.png",
           "color": "#00ff66",
-          "sound": "Bringing Me Dolphins Misc Jungle.wav"
+          "sound": "Bringing Me Dolphins Misc Jungle"
         }      
         ]
     },
