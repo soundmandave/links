@@ -42,80 +42,80 @@
   ],
   "categories": [
     {
-      "name": "Bank 1 - Services", 
+     "name": "Bank 2 - David Berry", 
        "theme":  
      {    
-    "backgroundImage": "finalleavesinjungle.png",
+    "backgroundImage": "leavesonastream1080full.png",
     "primary": "#00ff66",
     "accent": "#ff00aa",
     "displayBg": "#111111"
      },
-  
-      "pads": [
-        {
-          "displayTitle": "Mixing - Rates Guide - </li><li> Lite (1-10 Stems) - £40 </li><li> Mid (11-25 Stems) - £60 </li><li> Standard (26-50 Stems) - £80) </li><li> Standard+ (50+ Stems) - £100 </li><li> ALL MIXING INCLUDES FREE ROUGH MASTER </li><li> MP3 & WAV Files Provided, Mixes peak to -6dB and Master to 0dB & Industry Standard Loudness </li><li> Pro Mastering </li><li> Deals Available",
-          "padLabel": "Mixing & Mastering",
-          "link": "",
-          "thumbnail": "mixingdesk.png",
+      "pads": [     {
+          "displayTitle": "Support Soundman Dave on Bandcamp",
+          "padLabel": "Bandcamp",
+          "link": "https://davidberrysounds.bandcamp.com/",
+          "thumbnail": "bandcampthumbnail.png",
           "color": "#00ff66",
-          "sound": "Wheel Up Signal Misc Jungle"
+          "sound": "Bringing Me Dolphins Misc Jungle"
         },
-        {
-          "displayTitle": "Track Production </li><li> Sessions </li><li> Bespoke Composition </li><li> Remixes </li><li> Help Finishing Tracks </li><li> ",
-          "padLabel": "Music Production",
-          "link": "",
-          "thumbnail": "korgsun.jpeg",
+           {
+          "displayTitle": "Check out my Youtube Channel",
+          "padLabel": "Youtube",
+          "link": "https://www.youtube.com/@straywave2527/",
+          "thumbnail": "youtubethumbnail.png",
           "color": "#00ff66",
-          "sound": "Wheel Up Signal Misc Jungle"
+          "sound": "Bringing Me Dolphins Misc Jungle"
+        }, 
+          {
+          "displayTitle": "Listen to the tracks on Soundcloud",
+          "padLabel": "Soundcloud",
+          "link": "https://soundcloud.com/davidberrysounds/albums",
+          "thumbnail": "soundcloudthumbnail.png",
+          "color": "#00ff66",
+          "sound": "Bringing Me Dolphins Misc Jungle"
+        }, 
+          {
+         "displayTitle": "Find David Berry on Streaming Services",
+          "padLabel": "Streaming Services",
+          "link": "https://artists.landr.com/davidberry",
+          "thumbnail": "streaming.png",
+          "color": "#00ff66",
+          "sound": "Bringing Me Dolphins Misc Jungle"
         },
-        {
-          "displayTitle": "Recording Only Sessions are available </li><li> £15 an hour includes Rough Mix Free",
-          "padLabel": "Recording",
-          "link": "",
-          "thumbnail": "microphone.jpeg",
+
+    {
+         "displayTitle": "Buy Leaves On A Stream on Bandcamp",
+          "padLabel": "Leaves On A Stream Bandcamp",
+          "link": "https://davidberrysounds.bandcamp.com/album/cowry-bay-2",
+          "thumbnail": "cowrybay.png",
           "color": "#00ff66",
-          "sound": "Wheel Up Signal Misc Jungle"
+          "sound": "Bringing Me Dolphins Misc Jungle"
         },
-        {
-          "displayTitle": "DJ + Sound Tech + Other Enquiries",
-          "padLabel": "Enquiries",
-          "link": "",
-          "thumbnail": "composition.jpeg",
+
+         {
+          "displayTitle": "Listen to Cowry Bay 1+2 on Youtube",
+          "padLabel": "Cowry Bay 1+2 Youtube",
+          "link": "https://www.youtube.com/watch?v=2a4LeIdVt8E&t=3712s",
+          "thumbnail": "cowrybay.png",
           "color": "#00ff66",
-          "sound": "Wheel Up Signal Misc Jungle"
+          "sound": "Bringing Me Dolphins Misc Jungle"
         },
-            {
-          "displayTitle": "Book a session by emailing me at contact@soundmandave.co.uk",
-          "padLabel": "Email to book",
-          "link": "",
-          "thumbnail": "enquiries.jpeg",
+       {
+          "displayTitle": "Listen to Cowry Bay 2 on Soundcloud",
+          "padLabel": "Cowry Bay 2 Soundcloud",
+          "link": "https://soundcloud.com/davidberrysounds/sets/cowry-bay-2",
+          "thumbnail": "cowrybay.png",
           "color": "#00ff66",
-          "sound": "Wheel Up Signal Misc Jungle"
+          "sound": "Bringing Me Dolphins Misc Jungle"
         },
-              {
-          "displayTitle": "Book a session by emailing me at contact@soundmandave.co.uk",
-          "padLabel": "Email to book",
-          "link": "",
-          "thumbnail": "enquiries.jpeg",
+       {
+          "displayTitle": "Listen to Cowry Bay 2 on Streaming Services",
+          "padLabel": "Cowry Bay 2 on Streaming Services",
+          "link": "https://artists.landr.com/055905848257",
+          "thumbnail": "cowrybay.png",
           "color": "#00ff66",
-          "sound": "Wheel Up Signal Misc Jungle"
-        },
-              {
-          "displayTitle": "Book a session by emailing me at contact@soundmandave.co.uk",
-          "padLabel": "Email to book",
-          "link": "",
-          "thumbnail": "enquiries.jpeg",
-          "color": "#00ff66",
-          "sound": "Wheel Up Signal Misc Jungle"
-        },
-              {
-          "displayTitle": "Book a session by emailing me at contact@soundmandave.co.uk",
-          "padLabel": "Email to book",
-          "link": "",
-          "thumbnail": "enquiries.jpeg",
-          "color": "#00ff66",
-          "sound": "Wheel Up Signal Misc Jungle"
-        }
+          "sound": "Bringing Me Dolphins Misc Jungle"
+        }      
         ]
     },
 
@@ -196,7 +196,85 @@
         }      
         ]
     },
- 
+  
+  {  
+        "name": "Bank 3 - Services", 
+       "theme":  
+     {    
+    "backgroundImage": "jungleleaves.png",
+    "primary": "#00ff66",
+    "accent": "#ff00aa",
+    "displayBg": "#111111"
+     },
+  
+      "pads": [
+        {
+          "displayTitle": "Mixing - Rates Are Dependent on Stems Condition & Complexity Of Mix </li><li> - For Example - Standard would be £100 for up to 40 stems where Recording, Editing and Production is already up to Scratch </li><li> ALL MIXING INCLUDES FREE ROUGH MASTER </li><li> MP3 & WAV Files Provided, Mixes peak to -6dB and Master to 0dB & Industry Standard Loudness </li><li> Pro Mastering </li><li> Deals Available",
+          "padLabel": "Mixing & Mastering",
+          "link": "",
+          "thumbnail": "mixingdesk.png",
+          "color": "#00ff66",
+          "sound": "Wheel Up Signal Misc Jungle"
+        },
+        {
+          "displayTitle": "Track Production </li><li> Sessions </li><li> Bespoke Composition </li><li> Remixes </li><li> Help Finishing Tracks </li><li> ",
+          "padLabel": "Music Production",
+          "link": "",
+          "thumbnail": "korgsun.jpeg",
+          "color": "#00ff66",
+          "sound": "Wheel Up Signal Misc Jungle"
+        },
+        {
+          "displayTitle": "Recording Only Sessions are available </li><li> £20 per hour includes Rough Mix Free",
+          "padLabel": "Recording",
+          "link": "",
+          "thumbnail": "microphone.jpeg",
+          "color": "#00ff66",
+          "sound": "Wheel Up Signal Misc Jungle"
+        },
+        {
+          "displayTitle": "DJ + Sound Tech + Other Enquiries",
+          "padLabel": "Enquiries",
+          "link": "",
+          "thumbnail": "composition.jpeg",
+          "color": "#00ff66",
+          "sound": "Wheel Up Signal Misc Jungle"
+        },
+            {
+          "displayTitle": "Book a session by emailing me at contact@soundmandave.co.uk",
+          "padLabel": "Email to book",
+          "link": "",
+          "thumbnail": "enquiries.jpeg",
+          "color": "#00ff66",
+          "sound": "Wheel Up Signal Misc Jungle"
+        },
+              {
+          "displayTitle": "Book a session by emailing me at contact@soundmandave.co.uk",
+          "padLabel": "Email to book",
+          "link": "",
+          "thumbnail": "enquiries.jpeg",
+          "color": "#00ff66",
+          "sound": "Wheel Up Signal Misc Jungle"
+        },
+              {
+          "displayTitle": "Book a session by emailing me at contact@soundmandave.co.uk",
+          "padLabel": "Email to book",
+          "link": "",
+          "thumbnail": "enquiries.jpeg",
+          "color": "#00ff66",
+          "sound": "Wheel Up Signal Misc Jungle"
+        },
+              {
+          "displayTitle": "Book a session by emailing me at contact@soundmandave.co.uk",
+          "padLabel": "Email to book",
+          "link": "",
+          "thumbnail": "enquiries.jpeg",
+          "color": "#00ff66",
+          "sound": "Wheel Up Signal Misc Jungle"
+        }
+        ]
+    },
+
     {
       "name": "",
       "pads": []
