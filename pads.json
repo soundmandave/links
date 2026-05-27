@@ -52,7 +52,7 @@
      "name": "Bank 1 - Soundman Dave", 
        "theme":  
      {    
-    "backgroundImage": "leavesonastream1080full.png",
+    "backgroundImage": "jungleleaves.png",
     "primary": "#00ff66",
     "accent": "#ff00aa",
     "displayBg": "#111111"
