@@ -1,6 +1,6 @@
 {
   "headerTitle": "SOUNDMANDAVE STUDIO TERMINAL",
-  "artistName": "home of david berry",
+  "artistName": "Soundman Dave is a Musician, DJ, Producer and Audio Engineer from the UK. Also releases under David Berry & straywave",
   "tagline": "</p><p> </p><p> </p><p> resident wizard",
   
   
@@ -45,7 +45,7 @@
       "name": "Bank 1 - Services", 
        "theme":  
      {    
-    "backgroundImage": "finalleavesinjungle2.png",
+    "backgroundImage": "finalleavesinjungle.png",
     "primary": "#00ff66",
     "accent": "#ff00aa",
     "displayBg": "#111111"
