@@ -30,14 +30,14 @@
     "type": "content",
     "title": "David Berry",
     "content": "<p> Releases as David Berry will probably fall under the acoustic, soundscape, composition, piano, ambient & jazz aspects of the musical spectrum. </p>",
-    "bankName": "Bank 2 - David Berry"
+    "bankName": "Bank 3 - David Berry"
   },
      {
     "label": "Soundman Dave",
     "type": "content",
     "title": "Soundman Dave",
     "content": "<p> Releases as Soundman Dave feature more Uptempo and Bass infused elements.   </p>",
-    "bankName": "Bank 2 - David Berry"
+    "bankName": "Bank 2 - Soundman Dave"
   }
 ],
 
@@ -49,131 +49,7 @@
   ],
   "categories": [
     {
-     "name": "Bank 1 - Soundman Dave", 
-       "theme":  
-     {    
-    "backgroundImage": "jungleleaves.png",
-    "primary": "#00ff66",
-    "accent": "#ff00aa",
-    "displayBg": "#111111"
-     },
-      "pads": [     {
-          "displayTitle": "Support Soundman Dave on Bandcamp",
-          "padLabel": "Bandcamp",
-          "link": "https://soundmandave.bandcamp.com/",
-          "thumbnail": "bandcampthumbnail.png",
-          "color": "#00ff66",
-          "sound": "Bringing Me Dolphins Misc Jungle"
-        },
-           {
-          "displayTitle": "Check out my Youtube Channel",
-          "padLabel": "Youtube",
-          "link": "https://www.youtube.com/@straywave2527/",
-          "thumbnail": "youtubethumbnail.png",
-          "color": "#00ff66",
-          "sound": "Bringing Me Dolphins Misc Jungle"
-        }, 
-          {
-          "displayTitle": "Soundman Dave Soundcloud",
-          "padLabel": "Soundcloud",
-          "link": "https://soundcloud.com/soundmandaveldn",
-          "thumbnail": "soundcloudthumbnail.png",
-          "color": "#00ff66",
-          "sound": "Bringing Me Dolphins Misc Jungle"
-        }, 
-          {
-         "displayTitle": "Find Soundman Dave on Streaming Services",
-          "padLabel": "Streaming Services",
-          "link": "https://artists.landr.com/soundmandave",
-          "thumbnail": "streaming.png",
-          "color": "#00ff66",
-          "sound": "Bringing Me Dolphins Misc Jungle"
-        }
-
-   
-        ]
-    },
-
-       {
-       "name": "Bank 2 - David Berry", 
-       "theme":  
-     {    
-    "backgroundImage": "leavesonastream1080full.png",
-    "primary": "#00ff66",
-    "accent": "#ff00aa",
-    "displayBg": "#111111"
-     },
-      "pads": [     {
-          "displayTitle": "Support David Berry on Bandcamp",
-          "padLabel": "Bandcamp",
-          "link": "https://davidberrysounds.bandcamp.com/",
-          "thumbnail": "bandcampthumbnail.png",
-          "color": "#00ff66",
-          "sound": "Bringing Me Dolphins Misc Jungle"
-        },
-           {
-          "displayTitle": "Check out my Youtube Channel",
-          "padLabel": "Youtube",
-          "link": "https://www.youtube.com/@straywave2527/",
-          "thumbnail": "youtubethumbnail.png",
-          "color": "#00ff66",
-          "sound": "Bringing Me Dolphins Misc Jungle"
-        }, 
-          {
-          "displayTitle": "Listen to the tracks on Soundcloud",
-          "padLabel": "Soundcloud",
-          "link": "https://soundcloud.com/davidberrysounds/albums",
-          "thumbnail": "soundcloudthumbnail.png",
-          "color": "#00ff66",
-          "sound": "Bringing Me Dolphins Misc Jungle"
-        }, 
-          {
-         "displayTitle": "Find David Berry on Streaming Services",
-          "padLabel": "Streaming Services",
-          "link": "https://artists.landr.com/davidberry",
-          "thumbnail": "streaming.png",
-          "color": "#00ff66",
-          "sound": "Bringing Me Dolphins Misc Jungle"
-        },
-
-    {
-         "displayTitle": "Buy Leaves On A Stream on Bandcamp",
-          "padLabel": "Leaves On A Stream Bandcamp",
-          "link": "https://davidberrysounds.bandcamp.com/album/cowry-bay-2",
-          "thumbnail": "cowrybay.png",
-          "color": "#00ff66",
-          "sound": "Bringing Me Dolphins Misc Jungle"
-        },
-
-         {
-          "displayTitle": "Listen to Cowry Bay 1+2 on Youtube",
-          "padLabel": "Cowry Bay 1+2 Youtube",
-          "link": "https://www.youtube.com/watch?v=2a4LeIdVt8E&t=3712s",
-          "thumbnail": "cowrybay.png",
-          "color": "#00ff66",
-          "sound": "Bringing Me Dolphins Misc Jungle"
-        },
-       {
-          "displayTitle": "Listen to Cowry Bay 2 on Soundcloud",
-          "padLabel": "Cowry Bay 2 Soundcloud",
-          "link": "https://soundcloud.com/davidberrysounds/sets/cowry-bay-2",
-          "thumbnail": "cowrybay.png",
-          "color": "#00ff66",
-          "sound": "Bringing Me Dolphins Misc Jungle"
-        },
-       {
-          "displayTitle": "Listen to Cowry Bay 2 on Streaming Services",
-          "padLabel": "Cowry Bay 2 on Streaming Services",
-          "link": "https://artists.landr.com/055905848257",
-          "thumbnail": "cowrybay.png",
-          "color": "#00ff66",
-          "sound": "Bringing Me Dolphins Misc Jungle"
-        }      
-        ]
-    },
-  
-  {  
-        "name": "Bank 3 - Services", 
+       "name": "Bank 1 - Services", 
        "theme":  
      {    
     "backgroundImage": "jungleleaves.png",
@@ -250,6 +126,130 @@
         ]
     },
 
+    {
+       "name": "Bank 2 - Soundman Dave", 
+       "theme":  
+     {    
+    "backgroundImage": "jungleleaves.png",
+    "primary": "#00ff66",
+    "accent": "#ff00aa",
+    "displayBg": "#111111"
+     },
+      "pads": [     {
+          "displayTitle": "Support Soundman Dave on Bandcamp",
+          "padLabel": "Bandcamp",
+          "link": "https://soundmandave.bandcamp.com/",
+          "thumbnail": "bandcampthumbnail.png",
+          "color": "#00ff66",
+          "sound": "Bringing Me Dolphins Misc Jungle"
+        },
+           {
+          "displayTitle": "Check out my Youtube Channel",
+          "padLabel": "Youtube",
+          "link": "https://www.youtube.com/@straywave2527/",
+          "thumbnail": "youtubethumbnail.png",
+          "color": "#00ff66",
+          "sound": "Bringing Me Dolphins Misc Jungle"
+        }, 
+          {
+          "displayTitle": "Soundman Dave Soundcloud",
+          "padLabel": "Soundcloud",
+          "link": "https://soundcloud.com/soundmandaveldn",
+          "thumbnail": "soundcloudthumbnail.png",
+          "color": "#00ff66",
+          "sound": "Bringing Me Dolphins Misc Jungle"
+        }, 
+          {
+         "displayTitle": "Find Soundman Dave on Streaming Services",
+          "padLabel": "Streaming Services",
+          "link": "https://artists.landr.com/soundmandave",
+          "thumbnail": "streaming.png",
+          "color": "#00ff66",
+          "sound": "Bringing Me Dolphins Misc Jungle"
+        }
+
+   
+        ]
+    },
+
+       {
+       "name": "Bank 3 - David Berry", 
+       "theme":  
+     {    
+    "backgroundImage": "leavesonastream1080full.png",
+    "primary": "#00ff66",
+    "accent": "#ff00aa",
+    "displayBg": "#111111"
+     },
+      "pads": [     {
+          "displayTitle": "Support David Berry on Bandcamp",
+          "padLabel": "Bandcamp",
+          "link": "https://davidberrysounds.bandcamp.com/",
+          "thumbnail": "bandcampthumbnail.png",
+          "color": "#00ff66",
+          "sound": "Bringing Me Dolphins Misc Jungle"
+        },
+           {
+          "displayTitle": "Check out my Youtube Channel",
+          "padLabel": "Youtube",
+          "link": "https://www.youtube.com/@straywave2527/",
+          "thumbnail": "youtubethumbnail.png",
+          "color": "#00ff66",
+          "sound": "Bringing Me Dolphins Misc Jungle"
+        }, 
+          {
+          "displayTitle": "Listen to the tracks on Soundcloud",
+          "padLabel": "Soundcloud",
+          "link": "https://soundcloud.com/davidberrysounds/albums",
+          "thumbnail": "soundcloudthumbnail.png",
+          "color": "#00ff66",
+          "sound": "Bringing Me Dolphins Misc Jungle"
+        }, 
+          {
+         "displayTitle": "Find David Berry on Streaming Services",
+          "padLabel": "Streaming Services",
+          "link": "https://artists.landr.com/davidberry",
+          "thumbnail": "streaming.png",
+          "color": "#00ff66",
+          "sound": "Bringing Me Dolphins Misc Jungle"
+        },
+
+    {
+         "displayTitle": "Buy Leaves On A Stream on Bandcamp",
+          "padLabel": "Leaves On A Stream Bandcamp",
+          "link": "https://davidberrysounds.bandcamp.com/album/cowry-bay-2",
+          "thumbnail": "cowrybay.png",
+          "color": "#00ff66",
+          "sound": "Bringing Me Dolphins Misc Jungle"
+        },
+
+         {
+          "displayTitle": "Listen to Cowry Bay 1+2 on Youtube",
+          "padLabel": "Cowry Bay 1+2 Youtube",
+          "link": "https://www.youtube.com/watch?v=2a4LeIdVt8E&t=3712s",
+          "thumbnail": "cowrybay.png",
+          "color": "#00ff66",
+          "sound": "Bringing Me Dolphins Misc Jungle"
+        },
+       {
+          "displayTitle": "Listen to Cowry Bay 2 on Soundcloud",
+          "padLabel": "Cowry Bay 2 Soundcloud",
+          "link": "https://soundcloud.com/davidberrysounds/sets/cowry-bay-2",
+          "thumbnail": "cowrybay.png",
+          "color": "#00ff66",
+          "sound": "Bringing Me Dolphins Misc Jungle"
+        },
+       {
+          "displayTitle": "Listen to Cowry Bay 2 on Streaming Services",
+          "padLabel": "Cowry Bay 2 on Streaming Services",
+          "link": "https://artists.landr.com/055905848257",
+          "thumbnail": "cowrybay.png",
+          "color": "#00ff66",
+          "sound": "Bringing Me Dolphins Misc Jungle"
+        }      
+        ]
+    },
+  
     {
       "name": "",
       "pads": []
