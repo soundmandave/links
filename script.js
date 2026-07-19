@@ -40,10 +40,11 @@ fetch("pads.json")
     currentData = data;
 
     terminalTitle.textContent = data.headerTitle || "STUDIO TERMINAL";
-    display.innerHTML = `
-      ${data.artistName}
-      ${data.tagline || ""}
-    `;
+   display.innerHTML = `
+  <h1>${data.landingTitle || data.artistName}</h1>
+  <p>${data.landingContent || data.tagline || ""}</p>
+`;
+
 
     buildDisplayMenu(data);
     buildUtilityButtons(data);
