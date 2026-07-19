@@ -1,5 +1,6 @@
 let selectedLink = null;
 let selectedPadElement = null;
+
 let currentData = null;
 
 const goButton = document.getElementById("goButton");
@@ -17,19 +18,26 @@ const displayMenuContainer = document.getElementById("displayMenu");
 const goDisplayButtons = document.querySelectorAll(".go-display");
 const cancelDisplayButtons = document.querySelectorAll(".cancel-display");
 
-/* =============================
-   LOAD JSON
-============================= */
+function setGoEnabled(enabled) {
+  goButton.disabled = !enabled;
+  statusLed.classList.toggle("active", enabled);
+  goInstruction.textContent = enabled
+    ? "Ready. Press GO to launch."
+    : 'Press a Pad then hit <strong>GO</strong> to launch';
 
+  goDisplayButtons.forEach(btn => {
+    btn.disabled = !enabled;
+  });
+}
+
+/* =============================
+LOAD JSON
+============================= */
 fetch("pads.json")
   .then(res => res.json())
   .then(data => {
-
     currentData = data;
-
-    terminalTitle.textContent =
-      data.headerTitle || "STUDIO TERMINAL";
-
+    terminalTitle.textContent = data.headerTitle || "STUDIO TERMINAL";
     display.innerHTML = `
       <h1>${data.artistName}</h1>
       <p>${data.tagline}</p>
@@ -43,7 +51,6 @@ fetch("pads.json")
       buildPads(data.categories[0].pads, data.artistName);
       applyTheme(data.categories[0]);
     }
-
   })
   .catch(err => {
     display.innerHTML = "<h1>JSON Error</h1>";
@@ -51,23 +58,18 @@ fetch("pads.json")
   });
 
 /* =============================
-   DISPLAY MENU
+DISPLAY MENU
 ============================= */
-
 function buildDisplayMenu(data) {
-
   displayMenuContainer.innerHTML = "";
-
   if (!data.displayMenu) return;
 
   data.displayMenu.forEach(menuItem => {
-
     const span = document.createElement("span");
     span.textContent = menuItem.label;
     span.style.cursor = "pointer";
 
     span.addEventListener("click", () => {
-
       if (menuItem.type === "content") {
         display.innerHTML = `
           <h1>${menuItem.title}</h1>
@@ -76,54 +78,42 @@ function buildDisplayMenu(data) {
       }
 
       if (menuItem.bankName) {
-        const bank = data.categories.find(
-          cat => cat.name === menuItem.bankName
-        );
-
+        const bank = data.categories.find(cat => cat.name === menuItem.bankName);
         if (bank) {
           buildPads(bank.pads, data.artistName);
           applyTheme(bank);
           setActiveTab(bank.name);
         }
       }
-
     });
 
     displayMenuContainer.appendChild(span);
-
   });
 }
 
 /* =============================
-   UTILITY BUTTONS
+UTILITY BUTTONS
 ============================= */
-
 function buildUtilityButtons(data) {
-
   if (!data.utilityButtons) return;
 
   data.utilityButtons.forEach(btn => {
-
     const a = document.createElement("a");
     a.classList.add("utility-btn");
     a.textContent = btn.label;
     a.href = btn.url;
     a.target = "_blank";
-
     utilityStrip.appendChild(a);
   });
 }
 
 /* =============================
-   TABS
+TABS
 ============================= */
-
 function buildTabs(data) {
-
   tabBar.innerHTML = "";
 
   data.categories.forEach((category, index) => {
-
     const tab = document.createElement("button");
     tab.classList.add("tab-button");
     tab.textContent = category.name;
@@ -131,16 +121,13 @@ function buildTabs(data) {
     if (index === 0) tab.classList.add("active");
 
     tab.addEventListener("click", () => {
-
       setActiveTab(category.name);
       buildPads(category.pads, data.artistName);
       applyTheme(category);
-
       display.innerHTML = `
         <h1>${category.name}</h1>
         <p>Pad bank loaded.</p>
       `;
-
     });
 
     tabBar.appendChild(tab);
@@ -148,18 +135,15 @@ function buildTabs(data) {
 }
 
 function setActiveTab(name) {
-  document.querySelectorAll(".tab-button")
-    .forEach(t =>
-      t.classList.toggle("active", t.textContent === name)
-    );
+  document.querySelectorAll(".tab-button").forEach(t => {
+    t.classList.toggle("active", t.textContent === name);
+  });
 }
 
 /* =============================
-   BUILD PADS
+BUILD PADS
 ============================= */
-
 function buildPads(pads, artistName) {
-
   padGrid.innerHTML = "";
   resetSelection();
 
@@ -174,7 +158,6 @@ function buildPads(pads, artistName) {
   while (padded.length < displayCount) padded.push({});
 
   padded.forEach((pad, index) => {
-
     const padElement = document.createElement("div");
     padElement.classList.add("pad");
 
@@ -190,113 +173,87 @@ function buildPads(pads, artistName) {
 
     const label = document.createElement("div");
     label.classList.add("pad-label");
-    label.textContent =
-      pad.padLabel || `PAD ${index + 1}`;
+
+    // Your template string had missing backticks earlier; ensure it's literal JS:
+    label.textContent = pad.padLabel || `PAD ${index + 1}`;
+
     padElement.appendChild(label);
 
     padElement.addEventListener("click", () => {
-
-      if (selectedPadElement)
-        selectedPadElement.classList.remove("selected");
+      if (selectedPadElement) selectedPadElement.classList.remove("selected");
 
       selectedPadElement = padElement;
       selectedPadElement.classList.add("selected");
 
       selectedLink = pad.link || null;
 
-      if (selectedLink) enableGo();
+      if (selectedLink) setGoEnabled(true);
+      else setGoEnabled(false);
 
-      if (pad.sound)
-        new Audio("sounds/" + pad.sound).play();
+      if (pad.sound) new Audio("sounds/" + pad.sound).play();
 
       display.innerHTML = `
         <h1>${artistName}</h1>
         <p>${pad.displayTitle || ""}</p>
       `;
-
     });
 
     padGrid.appendChild(padElement);
   });
 
-  padGrid.style.gridTemplateRows =
-    `repeat(${displayCount / 4}, 1fr)`;
+  padGrid.style.gridTemplateRows = `repeat(${displayCount / 4}, 1fr)`;
 }
 
 /* =============================
-   GO / CANCEL
+GO / CANCEL
 ============================= */
-
 goButton.addEventListener("click", () => {
-  if (selectedLink) {
-    window.open(selectedLink, "_blank");
-    resetSelection();
-  }
+  if (!selectedLink) return;
+
+  window.open(selectedLink, "_blank");
+  resetSelection();
 });
 
-cancelButton.addEventListener("click", resetSelection);
+cancelButton.addEventListener("click", () => resetSelection());
 
-// Display transport copies
-goDisplayButtons.forEach(btn =>
-  btn.addEventListener("click", () => goButton.click())
-);
+// Top copies -> forward clicks, but only when enabled
+goDisplayButtons.forEach(btn => {
+  btn.addEventListener("click", () => {
+    if (btn.disabled) return;
+    goButton.click();
+  });
+});
 
-cancelDisplayButtons.forEach(btn =>
-  btn.addEventListener("click", () => cancelButton.click())
-);
-
-function enableGo() {
-
-  goButton.disabled = false;
-  goDisplayButtons.forEach(btn => btn.disabled = false);
-
-  statusLed.classList.add("active");
-  goInstruction.textContent =
-    "Ready. Press GO to launch.";
-}
+cancelDisplayButtons.forEach(btn => {
+  btn.addEventListener("click", () => {
+    cancelButton.click();
+  });
+});
 
 function resetSelection() {
-
-  if (selectedPadElement)
-    selectedPadElement.classList.remove("selected");
+  if (selectedPadElement) selectedPadElement.classList.remove("selected");
 
   selectedPadElement = null;
   selectedLink = null;
 
-  goButton.disabled = true;
-  goDisplayButtons.forEach(btn => btn.disabled = true);
-
-  statusLed.classList.remove("active");
-
-  goInstruction.innerHTML =
-    'Press a Pad then hit <strong>GO</strong> to launch';
+  setGoEnabled(false);
 }
 
 /* =============================
-   THEME
+THEME
 ============================= */
-
 function applyTheme(bank) {
-
   if (!bank.theme) return;
 
   const root = document.documentElement;
 
-  if (bank.theme.primary)
-    root.style.setProperty(
-      "--primary-color",
-      bank.theme.primary
-    );
+  if (bank.theme.primary) root.style.setProperty("--primary-color", bank.theme.primary);
+  if (bank.theme.displayBg) root.style.setProperty("--display-bg", bank.theme.displayBg);
 
-  if (bank.theme.displayBg)
-    root.style.setProperty(
-      "--display-bg",
-      bank.theme.displayBg
-    );
-
-  if (bank.theme.backgroundImage)
+  if (bank.theme.backgroundImage) {
     root.style.setProperty(
       "--theme-image",
       `url(images/${bank.theme.backgroundImage})`
     );
+  }
 }
