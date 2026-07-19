@@ -5,7 +5,6 @@
   --theme-image: none;
 }
 
-
 /* Subtle Jungle Background */
 body {
   margin: 0;
@@ -26,7 +25,7 @@ body {
 /* Main Panel */
 .mpc {
   background: var(--theme-image) center/cover no-repeat,
-   linear-gradient(to bottom, #1c1c1c, #121212);
+    linear-gradient(to bottom, #1c1c1c, #121212);
   border: 6px solid #000;
   border-radius: 10px;
   padding: 30px;
@@ -75,15 +74,33 @@ body {
   margin-bottom: 15px;
   border: inset 4px #333;
   text-align: center;
-  min-height: 240px;   /* increase height */
+  min-height: 240px; /* increase height */
 }
 
-.display-transport {
+/* Push display content away from transport buttons */
+.mpc-display #mpcDisplay,
+.mpc-display .display-inner {
+  /* ensures content never sits under the absolute buttons */
+  padding-top: 0;
+  padding-bottom: 70px; /* space for bottom transport buttons inside the display */
+  box-sizing: border-box;
+}
+
+/* Display Transport (Copy of Bottom Transport) */
+/* Keep it inside the display area without overlapping text */
+.transport-buttons.display-transport {
   position: absolute;
-  bottom: 10px;
   right: 10px;
+  top: 10px;         /* move away from the bottom text area */
+  bottom: auto;
+  z-index: 5;
+  display: flex;
+  gap: 8px;
 }
 
+/* If you prefer it bottom-right instead, set top: auto; bottom: 10px; and keep padding-bottom above */
+
+/* Menu */
 .display-menu {
   display: flex;
   gap: 20px;
@@ -92,43 +109,18 @@ body {
   color: #00ff66;
   white-space: pre;
   cursor: pointer;
+  flex-wrap: nowrap;
 }
 
+/* Ensure menu items remain clickable */
+.display-menu span {
+  white-space: nowrap;
+  display: inline-block;
+}
+
+/* Hover */
 .display-menu span:hover {
   text-decoration: underline;
-  white-space: pre;
-  
-}
-
-.display-buttons {
-  position: absolute;
-  bottom: 10px;
-  right: 10px;
-  display: flex;
-  gap: 8px;
-}
-
-.display-buttons button {
-  background: #c0c0c0;
-  border: 2px solid #fff;
-  border-right-color: #808080;
-  border-bottom-color: #808080;
-  padding: 4px 10px;
-  cursor: pointer;
-  font-weight: bold;
-}
-
-.mpc-display::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: repeating-linear-gradient(
-    to bottom,
-    rgba(0,255,102,0.03),
-    rgba(0,255,102,0.03) 1px,
-    transparent 1px,
-    transparent 3px
-  );
 }
 
 /* Layout */
@@ -177,10 +169,6 @@ body {
   position: relative;
   overflow: hidden;
 }
-.pad {
-  position: relative;
-  overflow: hidden;
-}
 
 .pad.selected {
   box-shadow: inset 0 0 15px var(--primary-color);
@@ -191,7 +179,7 @@ body {
   bottom: 5px;
   left: 5px;
   right: 5px;
-   z-index: 2;
+  z-index: 2;
   font-size: 11px;
   color: var(--primary-color);
   text-align: center;
@@ -262,18 +250,44 @@ body {
   text-decoration: none;
 }
 
-/* Mobile Sticky */
-@media (max-width: 768px) {
+/* Subtle grid lines in display */
+.mpc-display::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    to bottom,
+    rgba(0, 255, 102, 0.03),
+    rgba(0, 255, 102, 0.03) 1px,
+    transparent 1px,
+    transparent 3px
+  );
+  pointer-events: none;
+}
 
-  .display-section,
-  .transport-container {
-    position: sticky;
-    top: 0;
-    z-index: 10;
-    background: #111;
-    padding: 10px 0;
+/* Mobile Sticky + responsive fixes */
+@media (max-width: 768px) {
+  /* Keep layout usable */
+  .terminal-wrapper {
+    padding: 15px 8px;
   }
 
+  .mpc {
+    padding: 18px;
+  }
+
+  /* Avoid sticky header overlapping content.
+     Sticky can cause the absolute transport overlay to cover content. */
+  .display-section,
+  .transport-container {
+    position: static; /* changed from sticky */
+    top: auto;
+    z-index: auto;
+    background: transparent;
+    padding: 0;
+  }
+
+  /* Side buttons: row scroll */
   .controls-section {
     flex-direction: column;
   }
@@ -282,6 +296,34 @@ body {
     flex-direction: row;
     overflow-x: auto;
     width: 100%;
+    -webkit-overflow-scrolling: touch;
   }
 
+  /* Menu: keep it on-screen */
+  .display-menu {
+    flex-wrap: wrap;      /* changed: prevents going off the edge */
+    gap: 10px 12px;
+    justify-content: center;
+    padding: 0 6px;
+  }
+
+  .display-menu span {
+    white-space: nowrap;
+  }
+
+  /* Transport buttons inside display: make them smaller on mobile */
+  .transport-buttons.display-transport {
+    top: 8px;
+    right: 8px;
+  }
+
+  .transport-buttons.display-transport button {
+    padding: 10px 14px;
+  }
+
+  /* Ensure text in display doesn't sit under the top transport buttons */
+  .mpc-display #mpcDisplay {
+    padding-bottom: 30px;
+    padding-top: 40px; /* space for the top transport buttons */
+  }
 }
