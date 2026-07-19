@@ -1,13 +1,11 @@
 let selectedLink = null;
 let selectedPadElement = null;
-
 let currentData = null;
 
 const goButton = document.getElementById("goButton");
 const cancelButton = document.getElementById("cancelButton");
 const statusLed = document.getElementById("statusLed");
 const goInstruction = document.getElementById("goInstruction");
-
 const padGrid = document.getElementById("padGrid");
 const tabBar = document.getElementById("tabBar");
 const utilityStrip = document.getElementById("utilityStrip");
@@ -21,9 +19,13 @@ const cancelDisplayButtons = document.querySelectorAll(".cancel-display");
 function setGoEnabled(enabled) {
   goButton.disabled = !enabled;
   statusLed.classList.toggle("active", enabled);
-  goInstruction.textContent = enabled
-    ? "Ready. Press GO to launch."
-    : 'Press a Pad then hit <strong>GO</strong> to launch';
+
+  // IMPORTANT: plain text only (no <strong>) to avoid rendering issues
+  if (enabled) {
+    goInstruction.textContent = "Ready. Press GO to launch.";
+  } else {
+    goInstruction.textContent = "Press a Pad then hit GO to launch";
+  }
 
   goDisplayButtons.forEach(btn => {
     btn.disabled = !enabled;
@@ -37,17 +39,18 @@ fetch("pads.json")
   .then(res => res.json())
   .then(data => {
     currentData = data;
+
     terminalTitle.textContent = data.headerTitle || "STUDIO TERMINAL";
     display.innerHTML = `
       <h1>${data.artistName}</h1>
-      <p>${data.tagline}</p>
+      <p>${data.tagline || ""}</p>
     `;
 
     buildDisplayMenu(data);
     buildUtilityButtons(data);
     buildTabs(data);
 
-    if (data.categories.length > 0) {
+    if (data.categories && data.categories.length > 0) {
       buildPads(data.categories[0].pads, data.artistName);
       applyTheme(data.categories[0]);
     }
@@ -73,7 +76,7 @@ function buildDisplayMenu(data) {
       if (menuItem.type === "content") {
         display.innerHTML = `
           <h1>${menuItem.title}</h1>
-          ${menuItem.content}
+          ${menuItem.content || ""}
         `;
       }
 
@@ -124,6 +127,8 @@ function buildTabs(data) {
       setActiveTab(category.name);
       buildPads(category.pads, data.artistName);
       applyTheme(category);
+
+      // Keep this minimal; pad selection will overwrite when a pad is clicked
       display.innerHTML = `
         <h1>${category.name}</h1>
         <p>Pad bank loaded.</p>
@@ -148,8 +153,8 @@ function buildPads(pads, artistName) {
   resetSelection();
 
   const count = pads.length;
-
   let displayCount;
+
   if (count <= 8) displayCount = 8;
   else if (count <= 12) displayCount = 12;
   else displayCount = 16;
@@ -174,9 +179,8 @@ function buildPads(pads, artistName) {
     const label = document.createElement("div");
     label.classList.add("pad-label");
 
-    // Your template string had missing backticks earlier; ensure it's literal JS:
+    // FIX: ensure template literal is correct
     label.textContent = pad.padLabel || `PAD ${index + 1}`;
-
     padElement.appendChild(label);
 
     padElement.addEventListener("click", () => {
@@ -186,22 +190,27 @@ function buildPads(pads, artistName) {
       selectedPadElement.classList.add("selected");
 
       selectedLink = pad.link || null;
-
-      if (selectedLink) setGoEnabled(true);
-      else setGoEnabled(false);
+      setGoEnabled(!!selectedLink);
 
       if (pad.sound) new Audio("sounds/" + pad.sound).play();
 
+      // Header under title: padLabel
+      // Content line under header: PadContent (new JSON field)
+      const padContent = pad.PadContent || "";
+
       display.innerHTML = `
         <h1>${artistName}</h1>
-        <p>${pad.displayTitle || ""}</p>
+        <p>${pad.padLabel || ""}</p>
+        <p class="pad-content">${padContent}</p>
       `;
     });
 
     padGrid.appendChild(padElement);
   });
 
-  padGrid.style.gridTemplateRows = `repeat(${displayCount / 4}, 1fr)`;
+  // FIX: set grid rows correctly
+  const rows = displayCount / 4;
+  padGrid.style.gridTemplateRows = `repeat(${rows}, 1fr)`;
 }
 
 /* =============================
@@ -209,7 +218,6 @@ GO / CANCEL
 ============================= */
 goButton.addEventListener("click", () => {
   if (!selectedLink) return;
-
   window.open(selectedLink, "_blank");
   resetSelection();
 });
@@ -232,10 +240,8 @@ cancelDisplayButtons.forEach(btn => {
 
 function resetSelection() {
   if (selectedPadElement) selectedPadElement.classList.remove("selected");
-
   selectedPadElement = null;
   selectedLink = null;
-
   setGoEnabled(false);
 }
 
